@@ -20,10 +20,10 @@ export default function Gallery() {
     let sorted = [...works];
     switch (value) {
       case "new":
-        sorted.sort((a, b) => a.year - b.year);
+        sorted.sort((a, b) => b.year - a.year);
         break;
       case "old":
-        sorted.sort((a, b) => b.year - a.year);
+        sorted.sort((a, b) => a.year - b.year);
         break;
       case "available":
         sorted.filter((work) => work.available);
@@ -62,15 +62,15 @@ export default function Gallery() {
           <Link
             href={`/artwork/${artwork.id}`}
             key={artwork.id}
-            className="group self-center"
+            className="group self-center justify-self-center"
           >
             <div className="relative  overflow-hidden ">
               <Image
                 src={artwork.src}
                 alt={artwork.title}
                 className="object-cover"
-                width={artwork.width * 10}
-                height={artwork.height * 10}
+                width={artwork.width * 12}
+                height={artwork.height * 12}
               />
             </div>
 
