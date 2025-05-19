@@ -151,7 +151,23 @@ export const works: ArtworkPageProps[] = [
     available: true,
     src: "/fingers-and-thumbs.webp",
   },
+
+  //2022
+
   //2021
+
+  {
+    id: "still-life-with-spring-flowers",
+    title: "Still Life With Spring Flowers (after Thomas Hart Benton)",
+    year: 2021,
+    medium: "Acrylic",
+    surface: "Canvas",
+    height: 50,
+    width: 40,
+    description: "Reworking of a Thomas Hart Benton painting.",
+    available: true,
+    src: "/still-life-with-spring-flowers.webp",
+  },
   {
     id: "apple-on-stone",
     title: "Apple on a Stone",
