@@ -1,7 +1,7 @@
 "use client";
 import { Button } from "@/components/ui/button";
 import { ArtworkPageProps } from "@/lib/models/ArtworkPageProps";
-import { works } from "@/lib/schemas/works";
+import { works } from "@/lib/schemas/works/works";
 import { Filter } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
@@ -15,6 +15,8 @@ export default function Gallery() {
   ];
 
   const [sortedWorks, setSortedWorks] = useState<ArtworkPageProps[]>(works);
+
+  const [isHovering, setHover] = useState(false);
 
   const sortBy = (value: string) => {
     let sorted = [...works];
@@ -57,31 +59,33 @@ export default function Gallery() {
 
         <div className="flex flex-col md:flex-row justify-between items-center gap-4 "></div>
       </div>
-      <div className="grid grid-cols-1` sm:grid-cols-3 lg:grid-cols-5 xl:grid-cols-6 gap-10">
+      <div
+        onMouseEnter={() => setHover(true)}
+        onMouseLeave={() => setHover(false)}
+        className="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-5 xl:grid-cols-6 gap-10"
+      >
         {sortedWorks.map((artwork: ArtworkPageProps) => (
           <Link
             href={`/artwork/${artwork.id}`}
             key={artwork.id}
             className="group self-center justify-self-center"
           >
-            <div className="relative  overflow-hidden ">
+            <div className="relative  overflow-hidden">
               <Image
                 src={artwork.src}
                 alt={artwork.title}
                 className="object-cover"
-                width={artwork.width * 12}
-                height={artwork.height * 12}
+                width={artwork.width * 15}
+                height={artwork.height * 15}
               />
+              {isHovering ?? (
+                /* // <div className="absolute inset-0 bg-black/30 opacity-0 transition-opacity duration-300 flex items-center justify-center"> */
+                <div className="text-left">
+                  <h3 className="font-medium">{artwork.title}</h3>
+                  <p className="text-sm">{artwork.year}</p>
+                </div>
+              )}
             </div>
-
-            {/* <div className=" inset-0 bg-black/30 opacity-0 transition-opacity duration-300 hover:opacity-100"> */}
-            <div className="mt-3">
-              <h3 className="font-medium">{artwork.title}</h3>
-              <p className="text-sm text-gray-600">
-                {artwork.medium}, {artwork.year}
-              </p>
-            </div>
-            {/* </div> */}
           </Link>
         ))}
       </div>

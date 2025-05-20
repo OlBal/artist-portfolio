@@ -35,4 +35,5 @@ type Tags =
   | "wildlife"
   | "scene"
   | "fruit"
-  | "food";
+  | "food"
+  | "sculpture";

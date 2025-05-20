@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { ArtworkPageProps } from "@/lib/models/ArtworkPageProps";
-import { works } from "@/lib/schemas/works";
-import { ArrowLeft, Calendar, Info, Maximize, Tag } from "lucide-react";
+import { works } from "@/lib/schemas/works/works";
+import { ArrowLeft, Maximize } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -10,10 +10,7 @@ export default async function ArtworkPage({
 }: {
   params: { id: string };
 }) {
-  console.log("param", params);
-
   let { id } = await params;
-
   const artwork = await works.find(
     (artwork: ArtworkPageProps) => artwork.id === id
   );
@@ -35,8 +32,14 @@ export default async function ArtworkPage({
                 <Image
                   src={artwork.src}
                   alt={artwork.title}
-                  fill
-                  className="object-cover"
+                  className="object-cover object-center rounded-lg"
+                  quality={100}
+                  placeholder="blur"
+                  blurDataURL={artwork.src}
+                  objectFit="contain"
+                  width={700}
+                  height={500}
+                  loading="lazy"
                 />
                 <Button
                   size="icon"
@@ -49,47 +52,24 @@ export default async function ArtworkPage({
               </div>
             </div>
 
-            <div className="space-y-8 p-4">
+            <div className="space-y-8 p-4 ">
               <div>
                 <h1 className="text-3xl font-bold">{artwork.title}</h1>
+                <span>
+                  <p>
+                    {artwork.medium}
+                    <span>${artwork.surface}</span>
+                  </p>
+                  <p></p>
+                </span>
+                <p>
+                  {artwork.height}cm x {artwork.width}cm
+                </p>
                 <p className="text-gray-600 mt-1">{artwork.year}</p>
               </div>
-
-              <div className="grid grid-cols-2 gap-y-4">
-                <div className="flex items-start">
-                  <Info className="h-4 w-4 mr-2 mt-1 text-gray-500" />
-                  <div>
-                    <h3 className="text-sm font-medium text-gray-500">
-                      Medium
-                    </h3>
-                    <p>{artwork.medium}</p>
-                  </div>
-                </div>
-
-                <div className="flex items-start">
-                  <Maximize className="h-4 w-4 mr-2 mt-1 text-gray-500" />
-                  <div>
-                    <p>
-                      {artwork.height}cm x {artwork.width}cm
-                    </p>
-                  </div>
-                </div>
-
-                <div className="flex items-start">
-                  <Tag className="h-4 w-4 mr-2 mt-1 text-gray-500" />
-                </div>
-
-                <div className="flex items-start">
-                  <Calendar className="h-4 w-4 mr-2 mt-1 text-gray-500" />
-                  <div>
-                    <p>{artwork.year}</p>
-                  </div>
-                </div>
-              </div>
-
               <div>
-                <h3 className="text-lg font-medium mb-2">About this work</h3>
                 <p className="text-gray-600">{artwork.description}</p>
+                <p className="text-gray-600">{artwork.additional}</p>
               </div>
 
               <div className="pt-4 border-t">
@@ -110,6 +90,30 @@ export default async function ArtworkPage({
                   {artwork.available ? (
                     <Button>"Inquire to Purchase"</Button>
                   ) : null}
+                </div>
+              </div>
+
+              <div className="pt-4 border-t">
+                <div className="flex justify-between items-center mb-4">
+                  <div className="flex items-center row">
+                    {artwork.linked?.map((linkedWork) => (
+                      <div className="pr-4">
+                        <Image
+                          key={linkedWork.id}
+                          src={linkedWork.src}
+                          alt={linkedWork.title}
+                          className="object-cover object-center rounded-lg"
+                          quality={100}
+                          placeholder="blur"
+                          blurDataURL={linkedWork.src}
+                          objectFit="contain"
+                          width={250}
+                          height={300}
+                          loading="lazy"
+                        />
+                      </div>
+                    ))}
+                  </div>
                 </div>
               </div>
             </div>

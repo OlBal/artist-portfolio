@@ -4,7 +4,6 @@ import Footer from "@/components/layout/components/Footer";
 import Header from "@/components/layout/components/Header";
 import { useRef } from "react";
 import "./globals.css";
-import Splash from "./splash/page";
 
 // export const metadata: Metadata = {
 //   title: "v0 App",
@@ -30,15 +29,15 @@ export default function RootLayout({
     <html lang="en">
       <head></head>
       <body>
-        {displaySplash ? (
-          <Splash />
+        {/* {displaySplash ? (
+          // <Splash />
         ) : (
-          <>
-            <Header />
-            {children}
-            <Footer />
-          </>
-        )}
+          <> */}
+        <Header />
+        {children}
+        <Footer />
+        {/* </> */}
+        {/* )} */}
       </body>
     </html>
   );
