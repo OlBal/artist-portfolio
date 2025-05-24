@@ -11,8 +11,19 @@ export interface ArtworkPageProps {
   available: boolean;
   src: string;
   linked?: LinkedArtworks[];
-  tags?: Tags[];
+  tags?: Tag[];
 }
+
+export type Tag =
+  | "abstract"
+  | "landscape"
+  | "fruit"
+  | "still-life"
+  | "wildlife"
+  | "scene"
+  | "fruit"
+  | "food"
+  | "sculpture";
 
 interface LinkedArtworks {
   id: string;
@@ -26,14 +37,3 @@ interface LinkedArtworks {
   available: boolean;
   src: string;
 }
-
-type Tags =
-  | "abstract"
-  | "landscape"
-  | "fruit"
-  | "still-life"
-  | "wildlife"
-  | "scene"
-  | "fruit"
-  | "food"
-  | "sculpture";

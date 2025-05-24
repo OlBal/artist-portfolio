@@ -54,11 +54,12 @@ export default async function ArtworkPage({
 
             <div className="space-y-8 p-4 ">
               <div>
-                <h1 className="text-3xl font-bold">{artwork.title}</h1>
+                <h1 className="text-xl md:text-lg sm:text-md font-bold">
+                  {artwork.title}
+                </h1>
                 <span>
                   <p>
-                    {artwork.medium}
-                    <span>${artwork.surface}</span>
+                    {artwork.medium} on {artwork.surface.toLowerCase()}
                   </p>
                   <p></p>
                 </span>

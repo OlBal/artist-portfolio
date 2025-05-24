@@ -6,7 +6,7 @@ import { Filter } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
-
+import { filterBy, sortBy } from "../utils/works-utils";
 export default function Gallery() {
   const options = [
     { value: "new", label: "Newer" },
@@ -14,40 +14,58 @@ export default function Gallery() {
     { value: "available", label: "Available" },
   ];
 
-  const [sortedWorks, setSortedWorks] = useState<ArtworkPageProps[]>(works);
+  const filterOptions = [
+    { value: "abstract", label: "Abstract" },
+    { value: "landscape", label: "Landscape" },
+    { value: "fruit", label: "Fruit" },
+    { value: "still-life", label: "Still Life" },
+    { value: "wildlife", label: "Wildlife" },
+    { value: "scene", label: "Scene" },
+    { value: "food", label: "Food" },
+    { value: "sculpture", label: "Sculpture" },
+  ];
+
+  const [sortedWorks, setWorks] = useState<ArtworkPageProps[]>(works);
 
   const [isHovering, setHover] = useState(false);
 
-  const sortBy = (value: string) => {
-    let sorted = [...works];
-    switch (value) {
-      case "new":
-        sorted.sort((a, b) => b.year - a.year);
-        break;
-      case "old":
-        sorted.sort((a, b) => a.year - b.year);
-        break;
-      case "available":
-        sorted.filter((work) => work.available);
-        break;
-      default:
-        break;
-    }
-    setSortedWorks(sorted);
+  const sort = (value: string) => {
+    let sortedWorks = sortBy(value, works);
+    setWorks(sortedWorks);
   };
+
+  const filter = (value: string) => {
+    let filteredWorks = filterBy(value, sortedWorks);
+    setWorks(filteredWorks as ArtworkPageProps[]);
+  };
+
+  // const removeFilter = (activeFilters:string[]) => {
+  //   let filteredWorks = removeFilters(value, sortedWorks);
+  //   setWorks(works);
+  // }
 
   return (
     <div className="min-h-screen px-4">
-      <div className="flex flex-row items-center py-3 gap-4 items-center w-full">
+      <div className="flex flex-row items-center py- gap-4 items-center w-full">
         <div className="flex flex-col md:flex-row gap-4 ">
           <Button variant="outline" className="flex items-center ">
             <Filter className="h-4 w-4" />
+            <select
+              onChange={(e) => filter(e.target.value)}
+              className="py-2 px-3 background-white rounded-md bg-white  cursor-pointer hover:bg-gray-100 "
+            >
+              {filterOptions.map((option) => (
+                <option value={option.value} key={option.label}>
+                  {option.label}
+                </option>
+              ))}
+            </select>
             Filter
           </Button>
         </div>
 
         <select
-          onChange={(e) => sortBy(e.target.value)}
+          onChange={(e) => sort(e.target.value)}
           className="py-2 px-3 background-white rounded-md bg-white border border-gray-300 cursor-pointer hover:bg-gray-100 "
         >
           {options.map((option) => (
