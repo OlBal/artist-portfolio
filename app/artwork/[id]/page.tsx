@@ -59,7 +59,10 @@ export default async function ArtworkPage({
                 </h1>
                 <span>
                   <p>
-                    {artwork.medium} on {artwork.surface.toLowerCase()}
+                    {artwork.medium}
+                    {artwork.surface
+                      ? ` on ${artwork.surface.toLowerCase()}`
+                      : ""}
                   </p>
                   <p></p>
                 </span>

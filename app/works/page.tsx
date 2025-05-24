@@ -1,8 +1,6 @@
 "use client";
-import { Button } from "@/components/ui/button";
 import { ArtworkPageProps } from "@/lib/models/ArtworkPageProps";
 import { works } from "@/lib/schemas/works/works";
-import { Filter } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
@@ -46,13 +44,13 @@ export default function Gallery() {
 
   return (
     <div className="min-h-screen px-4">
-      <div className="flex flex-row items-center py- gap-4 items-center w-full">
+      <div className="flex flex-row items-center flex-wrap  sm:justify-center py- gap-4 items-center w-full mt-8 mb-4">
         <div className="flex flex-col md:flex-row gap-4 ">
-          <Button variant="outline" className="flex items-center ">
-            <Filter className="h-4 w-4" />
+          <div className="flex items-center">
+            Filter:
             <select
               onChange={(e) => filter(e.target.value)}
-              className="py-2 px-3 background-white rounded-md bg-white  cursor-pointer hover:bg-gray-100 "
+              className="py-2 px-3 background-white rounded-md bg-white border border-gray-300 cursor-pointer hover:bg-gray-100 "
             >
               {filterOptions.map((option) => (
                 <option value={option.value} key={option.label}>
@@ -60,20 +58,22 @@ export default function Gallery() {
                 </option>
               ))}
             </select>
-            Filter
-          </Button>
+          </div>
         </div>
 
-        <select
-          onChange={(e) => sort(e.target.value)}
-          className="py-2 px-3 background-white rounded-md bg-white border border-gray-300 cursor-pointer hover:bg-gray-100 "
-        >
-          {options.map((option) => (
-            <option value={option.value} key={option.label}>
-              {option.label}
-            </option>
-          ))}
-        </select>
+        <div className="flex items-center ">
+          Sort:
+          <select
+            onChange={(e) => sort(e.target.value)}
+            className="py-2 px-3 background-white rounded-md bg-white  border border-gray-300 cursor-pointer hover:bg-gray-100 "
+          >
+            {options.map((option) => (
+              <option value={option.value} key={option.label}>
+                {option.label}
+              </option>
+            ))}
+          </select>
+        </div>
       </div>
 
       <div
