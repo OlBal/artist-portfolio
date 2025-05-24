@@ -2,10 +2,6 @@
 
 import type React from "react";
 
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
-import { Textarea } from "@/components/ui/textarea";
 import { Instagram, Mail } from "lucide-react";
 import { useState } from "react";
 
@@ -40,11 +36,13 @@ export default function ContactPage() {
   };
 
   return (
-    <div className="min-h-screen">
-      <main className="container py-12">
-        <h1 className="text-3xl md:text-4xl font-bold mb-8">Get in Touch</h1>
+    <div className="min-h-screen flex justify-center">
+      <main className="container py-4">
+        <h1 className="text-xl md:text-lg sm:text-md font-bold mb-8">
+          Get in Touch
+        </h1>
 
-        <div className="grid md:grid-cols-2 gap-12">
+        <div className="grid md:grid-cols-2  sm:grid-cols-1 gap-12">
           <div>
             <p className="text-lg mb-8">
               I'm always interested in discussing new projects, commissions, or
@@ -82,7 +80,7 @@ export default function ContactPage() {
               </div>
             </div>
           </div>
-          <div className="bg-gray-50 p-6 rounded-lg">
+          {/* <div className="bg-gray-50 p-6 rounded-lg">
             {isSubmitted ? (
               <div className="text-center py-8">
                 <h3 className="text-xl font-medium mb-2">Thank You!</h3>
@@ -151,7 +149,7 @@ export default function ContactPage() {
                 </Button>
               </form>
             )}
-          </div>
+          </div> */}
         </div>
       </main>
     </div>

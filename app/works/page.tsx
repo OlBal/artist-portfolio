@@ -38,27 +38,26 @@ export default function Gallery() {
 
   return (
     <div className="min-h-screen px-4">
-      <div className="flex flex-row items-center py-4">
-        <div className="flex flex-col md:flex-row justify-between items-center gap-4 ">
-          <Button variant="outline" className="flex items-center gap-2 mt-2">
+      <div className="flex flex-row items-center py-3 gap-4 items-center w-full">
+        <div className="flex flex-col md:flex-row gap-4 ">
+          <Button variant="outline" className="flex items-center ">
             <Filter className="h-4 w-4" />
             Filter
           </Button>
-
-          <select
-            onChange={(e) => sortBy(e.target.value)}
-            className="p-2 background-white rounded-md bg-white border border-gray-300 cursor-pointer hover:bg-gray-100 "
-          >
-            {options.map((option) => (
-              <option value={option.value} key={option.label}>
-                {option.label}
-              </option>
-            ))}
-          </select>
         </div>
 
-        <div className="flex flex-col md:flex-row justify-between items-center gap-4 "></div>
+        <select
+          onChange={(e) => sortBy(e.target.value)}
+          className="py-2 px-3 background-white rounded-md bg-white border border-gray-300 cursor-pointer hover:bg-gray-100 "
+        >
+          {options.map((option) => (
+            <option value={option.value} key={option.label}>
+              {option.label}
+            </option>
+          ))}
+        </select>
       </div>
+
       <div
         onMouseEnter={() => setHover(true)}
         onMouseLeave={() => setHover(false)}
