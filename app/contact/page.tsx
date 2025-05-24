@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
-import { Mail, MapPin, Phone } from "lucide-react";
+import { Instagram, Mail } from "lucide-react";
 import { useState } from "react";
 
 export default function ContactPage() {
@@ -57,37 +57,31 @@ export default function ContactPage() {
                 <Mail className="h-5 w-5 mr-3 mt-0.5 text-gray-600" />
                 <div>
                   <h3 className="font-medium">Email</h3>
-                  <p className="text-gray-600">contact@sophiachen.art</p>
+                  <a
+                    href="mailto:hello@oliverballon.com"
+                    className="text-gray-600"
+                  >
+                    hello@oliverballon.com
+                  </a>
                 </div>
               </div>
 
-              <div className="flex items-start">
-                <Phone className="h-5 w-5 mr-3 mt-0.5 text-gray-600" />
-                <div>
-                  <h3 className="font-medium">Phone</h3>
-                  <p className="text-gray-600">(415) 555-0123</p>
-                </div>
-              </div>
-
-              <div className="flex items-start">
-                <MapPin className="h-5 w-5 mr-3 mt-0.5 text-gray-600" />
-                <div>
-                  <h3 className="font-medium">Studio</h3>
-                  <p className="text-gray-600">
-                    123 Artist Lane
-                    <br />
-                    San Francisco, CA 94110
-                    <br />
-                    United States
-                  </p>
-                  <p className="text-sm text-gray-500 mt-1">
-                    Studio visits by appointment only
-                  </p>
-                </div>
+              <div className="space-y-6">
+                <a
+                  href="http://instagram.com/olliesavestheworld"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-start"
+                >
+                  <Instagram className="h-5 w-5 mr-3 mt-0.5 text-gray-600" />
+                  <div>
+                    <h3 className="font-medium">Instagram</h3>
+                    <p className="text-gray-600">@olliesavestheworld</p>
+                  </div>
+                </a>
               </div>
             </div>
           </div>
-
           <div className="bg-gray-50 p-6 rounded-lg">
             {isSubmitted ? (
               <div className="text-center py-8">
@@ -160,14 +154,6 @@ export default function ContactPage() {
           </div>
         </div>
       </main>
-
-      <footer className="border-t py-12 bg-white">
-        <div className="container text-center">
-          <p className="text-gray-600">
-            © {new Date().getFullYear()} Sophia Chen. All rights reserved.
-          </p>
-        </div>
-      </footer>
     </div>
   );
 }

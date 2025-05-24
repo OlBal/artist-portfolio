@@ -46,10 +46,9 @@ export default function AboutPage() {
           </div>
 
           <div className="space-y-6">
-            <h2 className="text-2xl font-semibold">Sophia Chen</h2>
             <div className="flex items-center text-gray-600">
               <MapPin className="h-4 w-4 mr-2" />
-              <span>Based in San Francisco, California</span>
+              <span>Member of 432 Studios</span>
             </div>
 
             <div className="space-y-4">

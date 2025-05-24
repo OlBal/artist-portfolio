@@ -11,7 +11,7 @@ export const works2022: ArtworkPageProps[] = [
     width: 29.7,
     description: "It's got legs that.",
     available: true,
-    src: "/strawberry.webp",
+    src: "/works/strawberry.webp",
     tags: ["fruit"],
   },
   {
@@ -25,7 +25,7 @@ export const works2022: ArtworkPageProps[] = [
     description:
       "An homage to the Memphis Group and all their spectacularly tacky homewares.",
     available: true,
-    src: "/memphis-parthenon.webp",
+    src: "/works/memphis-parthenon.webp",
     tags: ["abstract"],
   },
 ];

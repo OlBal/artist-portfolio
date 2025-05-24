@@ -12,7 +12,7 @@ export const works2019: ArtworkPageProps[] = [
     description:
       "A lectern for the Space Pope. Fulfilling the idea of space age religion and wonder.",
     available: false,
-    src: "/space-lectern-1.webp",
+    src: "/works/space-lectern-1.webp",
     tags: ["sculpture"],
     linked: [
       {
@@ -26,7 +26,7 @@ export const works2019: ArtworkPageProps[] = [
         description:
           "A lectern for the Space Pope. Fulfilling the idea of space age religion and wonder.",
         available: false,
-        src: "/space-lectern-4.webp",
+        src: "/works/space-lectern-4.webp",
       },
       {
         id: "space-lectern-3",
@@ -39,7 +39,7 @@ export const works2019: ArtworkPageProps[] = [
         description:
           "A lectern for the Space Pope. Fulfilling the idea of space age religion and wonder.",
         available: false,
-        src: "/space-lectern-3.webp",
+        src: "/works/space-lectern-3.webp",
       },
     ],
     additional:
@@ -55,7 +55,7 @@ export const works2019: ArtworkPageProps[] = [
     width: 50,
     description: "Tubular forms and bright colours.",
     available: true,
-    src: "/i-wish-douglas-was-still-here.webp",
+    src: "/works/i-wish-douglas-was-still-here.webp",
     additional:
       "Painted as part of the residency between The Latch & The Contraband Collective",
     tags: ["abstract"],
@@ -71,7 +71,7 @@ export const works2019: ArtworkPageProps[] = [
     description:
       "Based around the colours of the volcanic island of Isabella in the Galapagos.",
     available: false,
-    src: "/isabella-island.webp",
+    src: "/works/isabella-island.webp",
     tags: ["abstract", "landscape"],
   },
   {
@@ -84,7 +84,7 @@ export const works2019: ArtworkPageProps[] = [
     width: 40,
     description: "When you're up, you're up.",
     available: true,
-    src: "/laguna-loops.webp",
+    src: "/works/laguna-loops.webp",
     tags: ["abstract", "landscape"],
   },
   {
@@ -97,7 +97,7 @@ export const works2019: ArtworkPageProps[] = [
     width: 40,
     description: "The horizon and the land and the sky.",
     available: false,
-    src: "/land-and-sea.webp",
+    src: "/works/land-and-sea.webp",
     tags: ["abstract", "landscape"],
   },
   {
@@ -110,7 +110,7 @@ export const works2019: ArtworkPageProps[] = [
     width: 41,
     description: "It's always almost summer somewhere.",
     available: true,
-    src: "/summer.webp",
+    src: "/works/summer.webp",
     tags: ["landscape", "abstract"],
   },
   {
@@ -123,7 +123,7 @@ export const works2019: ArtworkPageProps[] = [
     width: 56,
     description: "What do you call a tiger with no eyes?",
     available: true,
-    src: "/tiger.webp",
+    src: "/works/tiger.webp",
     tags: ["landscape"],
   },
 
@@ -137,7 +137,7 @@ export const works2019: ArtworkPageProps[] = [
     width: 50,
     description: "Smooth and silky, but pasty and soft.",
     available: true,
-    src: "/toothpaste.webp",
+    src: "/works/toothpaste.webp",
     tags: ["abstract"],
   },
   {
@@ -153,7 +153,7 @@ export const works2019: ArtworkPageProps[] = [
     description:
       "An almagamation of landscapes from various parts of South America.",
     available: true,
-    src: "/down-the-hill-from-the-swing.webp",
+    src: "/works/down-the-hill-from-the-swing.webp",
     tags: ["abstract", "landscape"],
   },
 
@@ -167,7 +167,7 @@ export const works2019: ArtworkPageProps[] = [
     width: 40,
     description: "A bunch of fictional flowers",
     available: false,
-    src: "/fictional-flowers-2.webp",
+    src: "/works/fictional-flowers-2.webp",
     tags: ["abstract", "still-life"],
   },
   {
@@ -180,7 +180,7 @@ export const works2019: ArtworkPageProps[] = [
     width: 40,
     description: "A bunch of fictional flowers",
     available: false,
-    src: "/fictional-flowers-3.webp",
+    src: "/works/fictional-flowers-3.webp",
     tags: ["abstract", "still-life"],
   },
 
@@ -195,7 +195,7 @@ export const works2019: ArtworkPageProps[] = [
     description:
       "Inspired by the time I went to a late night screening of Princess Mononoke and fell asleep in the cinema.",
     available: false,
-    src: "/ghibli-rock.webp",
+    src: "/works/ghibli-rock.webp",
   },
   {
     id: "portal",
@@ -207,7 +207,7 @@ export const works2019: ArtworkPageProps[] = [
     width: 30,
     description: "Spiral spirals",
     available: false,
-    src: "/portal.webp",
+    src: "/works/portal.webp",
     tags: ["fruit", "food"],
   },
 ];

@@ -11,7 +11,7 @@ export const works2020: ArtworkPageProps[] = [
     width: 40,
     description: "Bauhaus kettle with fake flowers",
     available: false,
-    src: "/bauhaus-kettle.webp",
+    src: "/works/bauhaus-kettle.webp",
   },
   {
     id: "gummy-bear-1",
@@ -23,7 +23,7 @@ export const works2020: ArtworkPageProps[] = [
     width: 25,
     description: "Nice gelatinuos forms, moving all over each other.",
     available: true,
-    src: "/gummy-bear-1.webp",
+    src: "/works/gummy-bear-1.webp",
     tags: ["abstract"],
   },
   {
@@ -36,7 +36,7 @@ export const works2020: ArtworkPageProps[] = [
     width: 35,
     description: "A small window in the bedlam of chaos.",
     available: true,
-    src: "/out-of-the-fire.webp",
+    src: "/works/out-of-the-fire.webp",
     tags: ["abstract"],
   },
   {
@@ -49,7 +49,7 @@ export const works2020: ArtworkPageProps[] = [
     width: 29.7,
     description: "Bauhaus vase with fake flowers",
     available: true,
-    src: "/bauhaus-vase.webp",
+    src: "/works/bauhaus-vase.webp",
   },
   {
     id: "better-distraction-1",
@@ -61,7 +61,7 @@ export const works2020: ArtworkPageProps[] = [
     width: 25,
     description: "A very focussed funnel",
     available: true,
-    src: "/better-distraction-1.webp",
+    src: "/works/better-distraction-1.webp",
   },
   {
     id: "better-distraction-2",
@@ -73,6 +73,6 @@ export const works2020: ArtworkPageProps[] = [
     width: 25,
     description: "Another very focussed funnel",
     available: true,
-    src: "/better-distraction-2.webp",
+    src: "/works/better-distraction-2.webp",
   },
 ];

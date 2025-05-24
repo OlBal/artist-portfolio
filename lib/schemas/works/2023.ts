@@ -12,7 +12,7 @@ export const works2023: ArtworkPageProps[] = [
     description:
       "My father's now deceased bonsai, had it had a mid-life crisis.",
     available: true,
-    src: "/bonsai.webp",
+    src: "/works/bonsai.webp",
   },
   {
     id: "fingers-and-thumbs",
@@ -25,7 +25,7 @@ export const works2023: ArtworkPageProps[] = [
     description:
       "It is like when you're a kid and you wrap a piece of string around your finger and it turns purple. But it's a peach.",
     available: true,
-    src: "/fingers-and-thumbs.webp",
+    src: "/works/fingers-and-thumbs.webp",
   },
   {
     id: "satsuma",
@@ -37,7 +37,7 @@ export const works2023: ArtworkPageProps[] = [
     width: 29.7,
     description: "Not a satsuma.",
     available: true,
-    src: "/satsuma.webp",
+    src: "/works/satsuma.webp",
     tags: ["fruit", "still-life"],
   },
 ];

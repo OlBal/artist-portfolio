@@ -11,7 +11,7 @@ export const works2018: ArtworkPageProps[] = [
     width: 40,
     description: "A bunch of fictional flowers",
     available: false,
-    src: "/fictional-flowers-1.webp",
+    src: "/works/fictional-flowers-1.webp",
     tags: ["abstract", "still-life"],
   },
   {
@@ -24,7 +24,7 @@ export const works2018: ArtworkPageProps[] = [
     width: 40,
     description: "A load of contrast fighting it out.",
     available: true,
-    src: "/grit-teeth.webp",
+    src: "/works/grit-teeth.webp",
     tags: ["abstract"],
   },
 
@@ -38,7 +38,7 @@ export const works2018: ArtworkPageProps[] = [
     width: 29.7,
     description: "Don't we wish we all had one?",
     available: true,
-    src: "/pretend-kingdom.webp",
+    src: "/works/pretend-kingdom.webp",
     tags: ["abstract"],
   },
 ];
