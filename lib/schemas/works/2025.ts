@@ -2,6 +2,19 @@ import { ArtworkPageProps } from "@/lib/models/ArtworkPageProps";
 
 export const works2025: ArtworkPageProps[] = [
   {
+    id: "mushrooms",
+    title: "Mushrooms",
+    year: 2025,
+    medium: "Acrylic",
+    surface: "Canvas Board",
+    height: 75,
+    width: 60,
+    description: "Mushrooms in a woodland maybe?",
+    available: true,
+    src: "/works/mushrooms.webp",
+    tags: ["wildlife", "scene"],
+  },
+  {
     id: "vogue",
     title: "Vogue",
     year: 2025,
@@ -39,19 +52,7 @@ export const works2025: ArtworkPageProps[] = [
     src: "/works/fictional-flowers-4.webp",
     tags: ["abstract", "still-life"],
   },
-  {
-    id: "mushrooms",
-    title: "Mushrooms",
-    year: 2025,
-    medium: "Acrylic",
-    surface: "Canvas Board",
-    height: 75,
-    width: 60,
-    description: "Mushrooms in a woodland maybe?",
-    available: true,
-    src: "/works/mushrooms.webp",
-    tags: ["wildlife", "scene"],
-  },
+
   {
     id: "woods",
     title: "The Woods",

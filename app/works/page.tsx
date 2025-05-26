@@ -1,30 +1,15 @@
 "use client";
-import { ArtworkPageProps } from "@/lib/models/ArtworkPageProps";
+import { ArtworkPageProps, Tag } from "@/lib/models/ArtworkPageProps";
+import { filterOptions } from "@/lib/schemas/options/filter.options";
+import { sortOptions } from "@/lib/schemas/options/sort.options";
 import { works } from "@/lib/schemas/works/works";
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
-import { filterBy, sortBy } from "../utils/works-utils";
+import { sortBy } from "../utils/works-utils";
 export default function Gallery() {
-  const options = [
-    { value: "new", label: "Newer" },
-    { value: "old", label: "Older" },
-    { value: "available", label: "Available" },
-  ];
-
-  const filterOptions = [
-    { value: "abstract", label: "Abstract" },
-    { value: "landscape", label: "Landscape" },
-    { value: "fruit", label: "Fruit" },
-    { value: "still-life", label: "Still Life" },
-    { value: "wildlife", label: "Wildlife" },
-    { value: "scene", label: "Scene" },
-    { value: "food", label: "Food" },
-    { value: "sculpture", label: "Sculpture" },
-  ];
-
   const [sortedWorks, setWorks] = useState<ArtworkPageProps[]>(works);
-
+  const [selectedFilters, setSelectedFilters] = useState<string[]>([]);
   const [isHovering, setHover] = useState(false);
 
   const sort = (value: string) => {
@@ -32,25 +17,49 @@ export default function Gallery() {
     setWorks(sortedWorks);
   };
 
-  const filter = (value: string) => {
-    let filteredWorks = filterBy(value, sortedWorks);
-    setWorks(filteredWorks as ArtworkPageProps[]);
+  const clearAll = () => {
+    setSelectedFilters([]);
+    setWorks(works);
   };
 
-  // const removeFilter = (activeFilters:string[]) => {
-  //   let filteredWorks = removeFilters(value, sortedWorks);
-  //   setWorks(works);
-  // }
+  const clearFilter = (value: string) => {
+    const updatedFilters = selectedFilters.filter((f) => f !== value);
+    setSelectedFilters(updatedFilters);
+
+    let filtered = works.filter((work: ArtworkPageProps) =>
+      updatedFilters.length === 0
+        ? true
+        : updatedFilters.some((filter) => work.tags?.includes(filter as Tag))
+    );
+    setWorks(filtered.filter((work) => work !== null));
+  };
+
+  const filter = (value: string) => {
+    let worksToFilter = [...works];
+
+    let updatedFilters = selectedFilters.includes(value)
+      ? selectedFilters.filter((f) => f !== value)
+      : [...selectedFilters, value];
+
+    setSelectedFilters(updatedFilters);
+
+    let filtered = worksToFilter.filter((work: ArtworkPageProps) =>
+      updatedFilters.length === 0
+        ? true
+        : updatedFilters.some((filter) => work.tags?.includes(filter as Tag))
+    );
+    setWorks(filtered.filter((work) => work !== null));
+  };
 
   return (
     <div className="min-h-screen px-4">
-      <div className="flex flex-row items-center flex-wrap  sm:justify-center py- gap-4 items-center w-full mt-8 mb-4">
-        <div className="flex flex-col md:flex-row gap-4 ">
-          <div className="flex items-center">
-            Filter:
+      <div className="flex flex-row items-center flex-wrap  py- gap-4 w-full mt-8 mb-4">
+        <div className="flex flex-col md:flex-col border-r-1 border-gray-200">
+          <label className="text-sm mr-2 ">
+            Filter by
             <select
               onChange={(e) => filter(e.target.value)}
-              className="py-2 px-3 background-white rounded-md bg-white border border-gray-300 cursor-pointer hover:bg-gray-100 "
+              className="p-2 background-white rounded-md bg-white  cursor-pointer hover:bg-gray-100 "
             >
               {filterOptions.map((option) => (
                 <option value={option.value} key={option.label}>
@@ -58,22 +67,50 @@ export default function Gallery() {
                 </option>
               ))}
             </select>
-          </div>
+          </label>
         </div>
+        <div className="flex flex-col md:flex-col  ">
+          <label className="text-sm">
+            Sort by
+            <select
+              onChange={(e) => sort(e.target.value)}
+              className="p-2 background-white rounded-md bg-white cursor-pointer hover:bg-gray-100 "
+            >
+              {sortOptions.map((option) => (
+                <option value={option.value} key={option.label}>
+                  {option.label}
+                </option>
+              ))}
+            </select>
+          </label>
+        </div>
+      </div>
 
-        <div className="flex items-center ">
-          Sort:
-          <select
-            onChange={(e) => sort(e.target.value)}
-            className="py-2 px-3 background-white rounded-md bg-white  border border-gray-300 cursor-pointer hover:bg-gray-100 "
-          >
-            {options.map((option) => (
-              <option value={option.value} key={option.label}>
-                {option.label}
-              </option>
+      <div>
+        {selectedFilters.length > 0 && (
+          <div className="flex flex-wrap gap-2 mb-4 items-center">
+            {selectedFilters.map((filter) => (
+              <span
+                key={filter}
+                className="bg-gray-200 text-gray-800 px-3 py-1 rounded-full flex items-center"
+              >
+                {filter}
+                <button
+                  onClick={() => clearFilter(filter)}
+                  className="ml-2 text-gray-600 hover:text-gray-800"
+                >
+                  &times;
+                </button>
+              </span>
             ))}
-          </select>
-        </div>
+            <p
+              onClick={() => clearAll()}
+              className="cursor-pointer underline text-gray-600 hover:text-gray-800"
+            >
+              Clear all
+            </p>
+          </div>
+        )}
       </div>
 
       <div
@@ -96,7 +133,6 @@ export default function Gallery() {
                 height={artwork.height * 15}
               />
               {isHovering ?? (
-                /* // <div className="absolute inset-0 bg-black/30 opacity-0 transition-opacity duration-300 flex items-center justify-center"> */
                 <div className="text-left">
                   <h3 className="font-medium">{artwork.title}</h3>
                   <p className="text-sm">{artwork.year}</p>
