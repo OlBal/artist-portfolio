@@ -1,16 +1,15 @@
 "use client";
+import List from "@/components/List/list";
 import { ArtworkPageProps, Tag } from "@/lib/models/ArtworkPageProps";
 import { filterOptions } from "@/lib/schemas/options/filter.options";
 import { sortOptions } from "@/lib/schemas/options/sort.options";
 import { works } from "@/lib/schemas/works/works";
-import Image from "next/image";
-import Link from "next/link";
 import { useState } from "react";
 import { sortBy } from "../utils/works-utils";
-export default function Gallery() {
+
+export default function Works() {
   const [sortedWorks, setWorks] = useState<ArtworkPageProps[]>(works);
   const [selectedFilters, setSelectedFilters] = useState<string[]>([]);
-  const [isHovering, setHover] = useState(false);
 
   const sort = (value: string) => {
     let sortedWorks = sortBy(value, works);
@@ -53,36 +52,39 @@ export default function Gallery() {
 
   return (
     <div className="min-h-screen px-4">
-      <div className="flex flex-row items-center flex-wrap  py- gap-4 w-full mt-8 mb-4">
+      <div className="flex flex-row items-center flex-wrap gap-4 w-full mt-8 mb-4">
         <div className="flex flex-col md:flex-col border-r-1 border-gray-200">
-          <label className="text-sm mr-2 ">
-            Filter by
-            <select
-              onChange={(e) => filter(e.target.value)}
-              className="p-2 background-white rounded-md bg-white  cursor-pointer hover:bg-gray-100 "
-            >
-              {filterOptions.map((option) => (
-                <option value={option.value} key={option.label}>
-                  {option.label}
-                </option>
-              ))}
-            </select>
+          <label className="text-sm mr-2 " htmlFor="filter-select">
+            Filter
           </label>
+
+          <select
+            id="filter-select"
+            onChange={(e) => filter(e.target.value)}
+            className="py-2 px-1 background-white rounded-md bg-white cursor-pointer hover:bg-gray-100 "
+          >
+            {filterOptions.map((option) => (
+              <option value={option.value} key={option.label}>
+                {option.label}
+              </option>
+            ))}
+          </select>
         </div>
         <div className="flex flex-col md:flex-col  ">
-          <label className="text-sm">
-            Sort by
-            <select
-              onChange={(e) => sort(e.target.value)}
-              className="p-2 background-white rounded-md bg-white cursor-pointer hover:bg-gray-100 "
-            >
-              {sortOptions.map((option) => (
-                <option value={option.value} key={option.label}>
-                  {option.label}
-                </option>
-              ))}
-            </select>
+          <label className="text-sm" htmlFor="sort-select">
+            Sort
           </label>
+          <select
+            id="sort-select"
+            onChange={(e) => sort(e.target.value)}
+            className="py-2 px-1 background-white rounded-md bg-white cursor-pointer hover:bg-gray-100 "
+          >
+            {sortOptions.map((option) => (
+              <option value={option.value} key={option.label}>
+                {option.label}
+              </option>
+            ))}
+          </select>
         </div>
       </div>
 
@@ -113,35 +115,8 @@ export default function Gallery() {
         )}
       </div>
 
-      <div
-        onMouseEnter={() => setHover(true)}
-        onMouseLeave={() => setHover(false)}
-        className="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-5 xl:grid-cols-6 gap-10"
-      >
-        {sortedWorks.map((artwork: ArtworkPageProps) => (
-          <Link
-            href={`/artwork/${artwork.id}`}
-            key={artwork.id}
-            className="group self-center justify-self-center"
-          >
-            <div className="relative  overflow-hidden">
-              <Image
-                src={artwork.src}
-                alt={artwork.title}
-                className="object-cover"
-                width={artwork.width * 15}
-                height={artwork.height * 15}
-              />
-              {isHovering ?? (
-                <div className="text-left">
-                  <h3 className="font-medium">{artwork.title}</h3>
-                  <p className="text-sm">{artwork.year}</p>
-                </div>
-              )}
-            </div>
-          </Link>
-        ))}
-      </div>
+      {/* <Gallery sortedWorks={sortedWorks} /> */}
+      <List sortedWorks={sortedWorks} />
     </div>
   );
 }
