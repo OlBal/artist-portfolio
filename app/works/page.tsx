@@ -52,7 +52,7 @@ export default function Works() {
 
   return (
     <div className="min-h-screen px-4">
-      <div className="flex flex-row items-center flex-wrap gap-4 w-full mt-8 mb-4">
+      <div className="flex flex-row items-center flex-wrap gap-4 w-full  mt-4 container mx-auto py-4 px-6">
         <div className="flex flex-col md:flex-col border-r-1 border-gray-200">
           <label className="text-sm mr-2 " htmlFor="filter-select">
             Filter

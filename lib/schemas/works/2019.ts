@@ -5,7 +5,7 @@ export const works2019: ArtworkPageProps[] = [
     id: "space-lectern-1",
     title: "Space Lectern",
     year: 2019,
-    medium: "Wood, Plaser, Expanding Foam, Rubber, Emulsion, Acrylic",
+    medium: "Wood, Plaster, Wire, Expanding Foam, Rubber, Emulsion, Acrylic",
     surface: "",
     height: 100,
     width: 100,
@@ -19,7 +19,8 @@ export const works2019: ArtworkPageProps[] = [
         id: "space-lectern-4",
         title: "Space Lectern",
         year: 2019,
-        medium: "Wood, Plaser, Expanding Foam, Rubber, Emulsion, Acrylic",
+        medium:
+          "Wood, Plaster, Wire, Expanding Foam, Rubber, Emulsion, Acrylic",
         surface: "",
         height: 100,
         width: 100,
@@ -32,7 +33,8 @@ export const works2019: ArtworkPageProps[] = [
         id: "space-lectern-3",
         title: "Space Lectern",
         year: 2019,
-        medium: "Wood, Plaser, Expanding Foam, Rubber, Emulsion, Acrylic",
+        medium:
+          "Wood, Plaster, Wire, Expanding Foam, Rubber, Emulsion, Acrylic",
         surface: "",
         height: 100,
         width: 100,
@@ -159,7 +161,7 @@ export const works2019: ArtworkPageProps[] = [
 
   {
     id: "fictional-flowers-2",
-    title: "Fictional Flowers",
+    title: "Fictional Flowers II",
     year: 2019,
     medium: "Acrylic",
     surface: "Paper",
@@ -172,7 +174,7 @@ export const works2019: ArtworkPageProps[] = [
   },
   {
     id: "fictional-flowers-3",
-    title: "Fictional Flowers",
+    title: "Fictional Flowers III",
     year: 2019,
     medium: "Acrylic",
     surface: "Canvas",

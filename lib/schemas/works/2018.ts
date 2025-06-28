@@ -3,7 +3,7 @@ import { ArtworkPageProps } from "@/lib/models/ArtworkPageProps";
 export const works2018: ArtworkPageProps[] = [
   {
     id: "fictional-flowers-1",
-    title: "Fictional Flowers",
+    title: "Fictional Flowers I",
     year: 2018,
     medium: "Acrylic",
     surface: "Paper",

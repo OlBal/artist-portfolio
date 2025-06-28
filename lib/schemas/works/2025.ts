@@ -41,7 +41,7 @@ export const works2025: ArtworkPageProps[] = [
   },
   {
     id: "fictional-flowers-4",
-    title: "Fictional Flowers",
+    title: "Fictional Flowers IV",
     year: 2025,
     medium: "Acrylic",
     surface: "Paper",
