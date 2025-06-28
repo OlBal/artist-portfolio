@@ -1,4 +1,5 @@
 "use client";
+import Gallery from "@/components/Gallery/gallery";
 import List from "@/components/List/list";
 import { ArtworkPageProps, Tag } from "@/lib/models/ArtworkPageProps";
 import { filterOptions } from "@/lib/schemas/options/filter.options";
@@ -10,6 +11,8 @@ import { sortBy } from "../utils/works-utils";
 export default function Works() {
   const [sortedWorks, setWorks] = useState<ArtworkPageProps[]>(works);
   const [selectedFilters, setSelectedFilters] = useState<string[]>([]);
+  const [view, setView] = useState<boolean>(true);
+  const toggleView = () => setView(() => !view);
 
   const sort = (value: string) => {
     let sortedWorks = sortBy(value, works);
@@ -51,44 +54,50 @@ export default function Works() {
   };
 
   return (
-    <div className="min-h-screen px-4">
-      <div className="flex flex-row items-center flex-wrap gap-4 w-full  mt-4 container mx-auto py-4 px-6">
-        <div className="flex flex-col md:flex-col border-r-1 border-gray-200">
-          <label className="text-sm mr-2 " htmlFor="filter-select">
-            Filter
-          </label>
+    <div className="min-h-screen">
+      <div className="flex flex-row items-center justify-between gap-4 w-full container mx-auto py-1 px-2">
+        <button onClick={() => toggleView()}>
+          View {view ? "List" : "Grid"}
+        </button>
 
-          <select
-            id="filter-select"
-            onChange={(e) => filter(e.target.value)}
-            className="py-2 px-1 background-white rounded-md bg-white cursor-pointer hover:bg-gray-100 "
-          >
-            {filterOptions.map((option) => (
-              <option value={option.value} key={option.label}>
-                {option.label}
-              </option>
-            ))}
-          </select>
-        </div>
-        <div className="flex flex-col md:flex-col  ">
-          <label className="text-sm" htmlFor="sort-select">
-            Sort
-          </label>
-          <select
-            id="sort-select"
-            onChange={(e) => sort(e.target.value)}
-            className="py-2 px-1 background-white rounded-md bg-white cursor-pointer hover:bg-gray-100 "
-          >
-            {sortOptions.map((option) => (
-              <option value={option.value} key={option.label}>
-                {option.label}
-              </option>
-            ))}
-          </select>
+        <div className="flex flex-row items-center">
+          <div className="flex flex-col md:flex-col border-r-1 border-gray-200">
+            <label className="text-sm mr-2 " htmlFor="filter-select">
+              Filter
+            </label>
+
+            <select
+              id="filter-select"
+              onChange={(e) => filter(e.target.value)}
+              className="py-2 px-1 background-white rounded-md bg-white cursor-pointer hover:bg-gray-100 "
+            >
+              {filterOptions.map((option) => (
+                <option value={option.value} key={option.label}>
+                  {option.label}
+                </option>
+              ))}
+            </select>
+          </div>
+          <div className="flex flex-col md:flex-col">
+            <label className="text-sm" htmlFor="sort-select">
+              Sort
+            </label>
+            <select
+              id="sort-select"
+              onChange={(e) => sort(e.target.value)}
+              className="py-2 px-1 background-white rounded-md bg-white cursor-pointer hover:bg-gray-100 "
+            >
+              {sortOptions.map((option) => (
+                <option value={option.value} key={option.label}>
+                  {option.label}
+                </option>
+              ))}
+            </select>
+          </div>
         </div>
       </div>
 
-      <div>
+      <div className=" flex flex-row items-center justify-between gap-4 w-full container mx-auto px-6">
         {selectedFilters.length > 0 && (
           <div className="flex flex-wrap gap-2 mb-4 items-center">
             {selectedFilters.map((filter) => (
@@ -115,8 +124,11 @@ export default function Works() {
         )}
       </div>
 
-      {/* <Gallery sortedWorks={sortedWorks} /> */}
-      <List sortedWorks={sortedWorks} />
+      {view ? (
+        <Gallery sortedWorks={sortedWorks} />
+      ) : (
+        <List sortedWorks={sortedWorks} />
+      )}
     </div>
   );
 }

@@ -10,9 +10,9 @@ export default function ListRow({ row }: ListRowProps) {
     <Link
       href={`/artwork/${row.id}`}
       key={row.id}
-      className="group self-center justify-self-center w-full"
+      className="group self-center justify-self-center w-full "
     >
-      <ul className="flex flex-row justify-between items-center w-full p-1 border-b border-gray-200">
+      <ul className="flex flex-row justify-between items-center w-full p-1 border-b border-gray-200 hover:text-white transition-all duration-700 ease-in-out hover:bg-orange-500">
         <li className="flex-1">{row.title} </li>
         <li className="flex-1">{row.year}</li>
         <li className="flex-1">{row.medium}</li>
@@ -21,8 +21,8 @@ export default function ListRow({ row }: ListRowProps) {
           <div
             className={
               row.available
-                ? "bg-green-500 flex w-4 h-4 me-2 rounded-full  "
-                : "bg-red-500 flex w-4 h-4 me-2 rounded-full "
+                ? "bg-green-500 flex w-4 h-4 me-2 rounded-full"
+                : "bg-red-500 flex w-4 h-4 me-2 rounded-full"
             }
           ></div>
         </li>

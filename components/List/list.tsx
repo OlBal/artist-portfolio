@@ -15,7 +15,7 @@ export default function List({ sortedWorks }: GalleryProps) {
         <li className="flex-1">Surface</li>
         <li className="flex-1">Available</li>
       </ul>
-      {sortedWorks.map((artwork: ArtworkPageProps, index) => (
+      {sortedWorks.map((artwork: ArtworkPageProps) => (
         <ListRow key={artwork.id} row={artwork} />
       ))}
     </div>
