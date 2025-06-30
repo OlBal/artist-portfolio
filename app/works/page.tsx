@@ -55,21 +55,21 @@ export default function Works() {
 
   return (
     <div className="min-h-screen">
-      <div className="flex flex-row items-center justify-between gap-4 w-full container mx-auto py-1 px-2">
+      <div className="flex flex-row items-center justify-between gap-4 w-full  mx-auto py-1 px-2">
         <button onClick={() => toggleView()}>
           View {view ? "List" : "Grid"}
         </button>
 
         <div className="flex flex-row items-center">
-          <div className="flex flex-col md:flex-col border-r-1 border-gray-200">
-            <label className="text-sm mr-2 " htmlFor="filter-select">
+          <div className="flex flex-row no-wrap items-center">
+            <label className=" mr-3 " htmlFor="filter-select">
               Filter
             </label>
 
             <select
               id="filter-select"
               onChange={(e) => filter(e.target.value)}
-              className="py-2 px-1 background-white rounded-md bg-white cursor-pointer hover:bg-gray-100 "
+              className="py-2 px-1 bg-white cursor-pointer hover:bg-gray-100 mr-3 border border-gray-200 px-2focus:outline-none"
             >
               {filterOptions.map((option) => (
                 <option value={option.value} key={option.label}>
@@ -78,14 +78,15 @@ export default function Works() {
               ))}
             </select>
           </div>
-          <div className="flex flex-col md:flex-col">
-            <label className="text-sm" htmlFor="sort-select">
+
+          <div className="flex flex-row no-wrap items-center">
+            <label htmlFor="sort-select" className="mr-3">
               Sort
             </label>
             <select
               id="sort-select"
               onChange={(e) => sort(e.target.value)}
-              className="py-2 px-1 background-white rounded-md bg-white cursor-pointer hover:bg-gray-100 "
+              className="py-2 px-1 background-white bg-white cursor-pointer hover:bg-gray-100 border border-gray-200 "
             >
               {sortOptions.map((option) => (
                 <option value={option.value} key={option.label}>
