@@ -1,15 +1,16 @@
 import { ArtworkPageProps } from "@/lib/models/ArtworkPageProps";
+import { PrcssPageProps } from "@/lib/models/PrcssPageProps";
 import Image from "next/image";
 import Link from "next/link";
 
 type GalleryProps = {
-  sortedWorks: ArtworkPageProps[];
+  sortedWorks: ArtworkPageProps[] | PrcssPageProps[];
 };
 
 export default function Gallery({ sortedWorks }: GalleryProps) {
   return (
     <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 xl:grid-cols-6 border-t border-[#ececec]">
-      {sortedWorks.map((artwork: ArtworkPageProps) => (
+      {sortedWorks.map((artwork: ArtworkPageProps | PrcssPageProps) => (
         <figure
           key={artwork.id}
           className="p-5 m-0 border-r border-b border-[#ececec] box-border flex items-center justify-center"

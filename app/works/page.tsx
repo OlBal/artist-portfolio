@@ -1,23 +1,33 @@
 "use client";
 import Gallery from "@/components/Gallery/gallery";
 import List from "@/components/List/list";
+import { getScreenSize } from "@/components/shared/shared.utils";
 import { ArtworkPageProps, Tag } from "@/lib/models/ArtworkPageProps";
 import { filterOptions } from "@/lib/schemas/options/filter.options";
 import { sortOptions } from "@/lib/schemas/options/sort.options";
 import { works } from "@/lib/schemas/works/works";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { sortBy } from "../utils/works-utils";
 
 export default function Works() {
   const [sortedWorks, setWorks] = useState<ArtworkPageProps[]>(works);
   const [selectedFilters, setSelectedFilters] = useState<string[]>([]);
   const [view, setView] = useState<boolean>(true);
+  const [screenSize, setScreenSize] = useState<string>(getScreenSize());
   const toggleView = () => setView(() => !view);
 
   const sort = (value: string) => {
     let sortedWorks = sortBy(value, works);
     setWorks(sortedWorks);
   };
+
+  useEffect(() => {
+    const handleResize = () => {
+      setScreenSize(getScreenSize());
+    };
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   const clearAll = () => {
     setSelectedFilters([]);
@@ -50,15 +60,18 @@ export default function Works() {
         ? true
         : updatedFilters.some((filter) => work.tags?.includes(filter as Tag))
     );
+
     setWorks(filtered.filter((work) => work !== null));
   };
 
   return (
     <div className="min-h-screen">
       <div className="flex flex-row items-center justify-between gap-4 w-full  mx-auto py-1 px-2">
-        <button onClick={() => toggleView()}>
-          View {view ? "List" : "Grid"}
-        </button>
+        {screenSize !== "small" ? (
+          <button onClick={() => toggleView()}>
+            View {view ? "List" : "Grid"}
+          </button>
+        ) : null}
 
         <div className="flex flex-row items-center">
           <div className="flex flex-row no-wrap items-center">

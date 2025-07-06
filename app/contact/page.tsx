@@ -36,7 +36,7 @@ export default function ContactPage() {
   };
 
   return (
-    <div className="min-h-screen flex justify-center">
+    <div className="min-h-screen flex justify-center px-4">
       <main className="container py-4">
         <h1 className="text-xl md:text-lg sm:text-md font-bold mb-8">
           Get in Touch

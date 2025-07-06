@@ -4,7 +4,7 @@ import Image from "next/image";
 
 export default function AboutPage() {
   return (
-    <div className="min-h-screen flex justify-center">
+    <div className="min-h-screen flex justify-center px-4">
       <main className="container py-4 px-0 sm:px-4 md:px-8 ">
         <h1 className="text-xl md:text-lg sm:text-md font-bold mb-12">About</h1>
 

@@ -1,6 +1,7 @@
 import { ArtworkPageProps } from "@/lib/models/ArtworkPageProps";
 import Image from "next/image";
 import Link from "next/link";
+import { useState } from "react";
 type ListRowProps = {
   row: ArtworkPageProps;
 };
@@ -9,9 +10,14 @@ export default function ListRow({ row }: ListRowProps) {
   let preview: boolean = false;
   let image: ArtworkPageProps = preview ? row : row;
 
+  const [previewImage, setViewPreview] = useState<ArtworkPageProps | undefined>(
+    undefined
+  );
+  const [viewPreview, setPreview] = useState<boolean>(false);
+
   const displayPreview = () => {
-    preview = !preview;
-    console.log("Preview state:", row);
+    setViewPreview(image);
+    setPreview(!viewPreview);
   };
 
   return (
@@ -36,11 +42,21 @@ export default function ListRow({ row }: ListRowProps) {
             }
           ></div>
         </li>
-        {preview ?? (
-          <div className={"w-50 h-50 absolute top-30 left-0 z-10"}>
-            <Image src={image.src} alt={row.title} width={1500} height={1500} />
+
+        {viewPreview ? (
+          <div
+            className={
+              "absolute top-25 right-10 z-10 mr-5 opacity-0 transition-opacity duration-500 ease-in-out"
+            }
+          >
+            <Image
+              src={previewImage?.src ?? ""}
+              alt={previewImage?.title ?? "Preview Image"}
+              width={200}
+              height={200}
+            />
           </div>
-        )}
+        ) : undefined}
       </ul>
     </Link>
   );
