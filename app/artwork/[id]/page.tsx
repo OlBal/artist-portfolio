@@ -32,14 +32,16 @@ export default async function ArtworkPage({
                 <Image
                   src={artwork.src}
                   alt={artwork.title}
-                  className="object-cover object-center rounded-lg"
-                  quality={100}
+                  className="object-cover object-center rounded-lg transition-opacity duration-700 ease-in opacity-0"
                   placeholder="blur"
-                  blurDataURL={artwork.src}
                   objectFit="contain"
                   width={700}
                   height={500}
                   loading="lazy"
+                  onLoadingComplete={(img) => {
+                    img.classList.remove("opacity-0");
+                    img.classList.add("opacity-100");
+                  }}
                 />
                 <Button
                   size="icon"

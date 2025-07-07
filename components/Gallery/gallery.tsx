@@ -1,7 +1,7 @@
 import { ArtworkPageProps } from "@/lib/models/ArtworkPageProps";
 import { PrcssPageProps } from "@/lib/models/PrcssPageProps";
-import Image from "next/image";
 import Link from "next/link";
+import { LazyImage } from "../LazyImage";
 
 type GalleryProps = {
   sortedWorks: ArtworkPageProps[] | PrcssPageProps[];
@@ -20,13 +20,7 @@ export default function Gallery({ sortedWorks }: GalleryProps) {
             className="group self-center justify-self-center"
           >
             <div className="relative overflow-hidden">
-              <Image
-                src={artwork.src}
-                alt={artwork.title}
-                className="object-cover"
-                width={artwork.width * 15}
-                height={artwork.height * 15}
-              />
+              <LazyImage artwork={artwork} />
             </div>
           </Link>
         </figure>
