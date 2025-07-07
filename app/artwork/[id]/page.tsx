@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { ArtworkPageProps } from "@/lib/models/ArtworkPageProps";
 import { works } from "@/lib/schemas/works/works";
-import { ArrowLeft, Maximize } from "lucide-react";
+import { ArrowLeft } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -32,23 +32,18 @@ export default async function ArtworkPage({
                 <Image
                   src={artwork.src}
                   alt={artwork.title}
-                  className="object-cover object-center rounded-lg transition-opacity duration-700 ease-in opacity-0"
-                  placeholder="blur"
+                  className="object-cover object-center rounded-lg transition-opacity duration-700 ease-in opacity-100"
                   objectFit="contain"
-                  width={700}
-                  height={500}
+                  width={500}
+                  height={300}
                   loading="lazy"
-                  onLoadingComplete={(img) => {
-                    img.classList.remove("opacity-0");
-                    img.classList.add("opacity-100");
-                  }}
                 />
                 <Button
                   size="icon"
                   variant="secondary"
                   className="absolute top-4 right-4 opacity-80 hover:opacity-100"
                 >
-                  <Maximize className="h-4 w-4" />
+                  {/* <Maximize className="h-4 w-4" /> */}
                   <span className="sr-only">View full size</span>
                 </Button>
               </div>

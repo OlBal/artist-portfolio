@@ -4,8 +4,12 @@ import Image from "next/image";
 
 export function LazyImage({
   artwork,
+  width,
+  height,
 }: {
   artwork: ArtworkPageProps | PrcssPageProps;
+  width: number;
+  height: number;
 }) {
   return (
     <Image

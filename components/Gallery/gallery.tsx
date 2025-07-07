@@ -20,7 +20,11 @@ export default function Gallery({ sortedWorks }: GalleryProps) {
             className="group self-center justify-self-center"
           >
             <div className="relative overflow-hidden">
-              <LazyImage artwork={artwork} />
+              <LazyImage
+                artwork={artwork}
+                height={artwork.height * 15}
+                width={artwork.width * 15}
+              />
             </div>
           </Link>
         </figure>
