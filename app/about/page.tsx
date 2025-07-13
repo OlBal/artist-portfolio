@@ -1,4 +1,9 @@
-import { about, Education, Exhibition } from "@/lib/schemas/about/about";
+import {
+  about,
+  Education,
+  Exhibition,
+  Exhibitions,
+} from "@/lib/schemas/about/about";
 import { ArrowRight } from "lucide-react";
 import Image from "next/image";
 
@@ -6,19 +11,21 @@ export default function AboutPage() {
   return (
     <div className="min-h-screen flex justify-center px-4">
       <main className="container py-4 px-0 sm:px-4 md:px-8 ">
-        <h1 className="text-xl md:text-lg sm:text-md font-bold mb-12">About</h1>
+        <div className="relative mb-4">
+          <Image
+            src="/about/about-profile-photo.webp"
+            alt="Oliver Ballon living his life"
+            className="object-cover object-center"
+            width={400}
+            height={400}
+          />
+        </div>
 
-        <div className="grid md:grid-cols-2 sm:grid-cols-1 gap-12 items-start">
-          <div className="relative aspect-[4/4] justify-self-center">
-            <Image
-              src="/about/about-profile-photo.webp"
-              alt="Oliver Ballon living his life"
-              className="object-cover object-center"
-              width={600}
-              height={600}
-            />
-          </div>
+        <hr />
 
+        <h1 className="text-xl md:text-lg sm:text-md font-bold mb-4">About</h1>
+
+        <div className="grid md:grid-cols-2 sm:grid-cols-1 gap-12 items-start my-4">
           <div className="space-y-6">
             <p>
               Oliver Ballon is a contemporary artist whose work explores the
@@ -27,8 +34,9 @@ export default function AboutPage() {
               paintings bridge the gap between the tangible world and our
               emotional responses to it.
             </p>
+            <hr />
 
-            <div className="mt-8">
+            <div className="mt-4">
               <h4 className="text-xl font-bold mb-8 flex items-center">
                 Statement
               </h4>
@@ -68,25 +76,33 @@ export default function AboutPage() {
             </div>
           </div>
         </div>
+
+        <hr />
+
         <div className="grid md:grid-cols-2 gap-12 items-start">
-          <div className="mt-8">
+          <div className="mt-4">
             <h4 className="text-xxl font-bold mb-3 flex items-center">
               Selected Exhibitions
             </h4>
 
             <div className="space-y-2">
-              {about.exhibitions.map((exhibition: Exhibition, index) => (
-                <div key={index} className="flex gap-2 pb-2 ">
-                  <div className="font-medium text-lg min-w-[60px]">
-                    {exhibition.year}
-                  </div>
-                  <div className="inline-flex gap-2">
-                    <h3 className="font-medium">{exhibition.title},</h3>
-                    <p className="text-gray-600">{exhibition.venue}</p>
-                    <small className="text-gray-600">
-                      {exhibition.location}
-                    </small>
-                  </div>
+              {about.exhibitions.map((exhibitions: Exhibitions, index) => (
+                <div key={index}>
+                  <p>{exhibitions?.year}</p>
+                  {exhibitions.shows.map((exhibition: Exhibition, index) => (
+                    <div className="flex column gap-2" key={index}>
+                      <div className="flex row items-center space-between gap-2 font-medium text-md">
+                        <p>
+                          {exhibition.title}, {exhibition.venue}
+                        </p>
+                        <p>
+                          <small className="text-gray-600">
+                            {exhibition.location}
+                          </small>
+                        </p>
+                      </div>
+                    </div>
+                  ))}
                 </div>
               ))}
             </div>
