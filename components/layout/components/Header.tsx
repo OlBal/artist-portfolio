@@ -18,17 +18,21 @@ export default function Header() {
 
         <div>
           <nav className="hidden md:flex gap-12 justify-around items-center">
-            <div className="flex gap-6">
-              {navigation.map((link) => (
-                <Link
-                  key={link.label}
-                  href={link.href}
-                  className="font-medium hover:text-gray-600 transition-colors"
-                >
-                  {link.label}
-                </Link>
-              ))}
-            </div>
+            <menu>
+              <ul className="flex gap-6">
+                {navigation.map((link) => (
+                  <li>
+                    <Link
+                      key={link.label}
+                      href={link.href}
+                      className="font-medium hover:text-gray-600 transition-colors"
+                    >
+                      {link.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </menu>
             <div className="flex flex-row gap-6">
               <a
                 href="https://instagram.com/olliesavestheworld"
@@ -50,22 +54,13 @@ export default function Header() {
 
           <div>
             <Button
-              variant="outline"
               onClick={() => toggleMenu()}
               aria-label="Open menu"
-              className={`${open ? "hidden" : "block"} md:hidden`}
+              className={`${
+                open ? "hidden" : "block"
+              } md:hidden bg-transparent text-black hover:bg-gray-10 border-gray-300`}
             >
               Menu
-            </Button>
-
-            <Button
-              variant="outline"
-              onClick={() => toggleMenu()}
-              aria-label="Open menu"
-              className={`${open ? "block" : "hidden"} md:hidden z-999`}
-            >
-              Close
-              <X />
             </Button>
 
             <div
@@ -75,6 +70,18 @@ export default function Header() {
                   : "pl-2 pt-2 fixed inset-0 z-20 bg-white h-screen flex flex-col justify-center items-center gap-5"
               }`}
             >
+              <Button
+                onClick={() => toggleMenu()}
+                aria-label="Open menu"
+                className={`${
+                  open ? "block" : "hidden"
+                } md:hidden z-999  bg-transparent top-10 right-5 absolute hover:bg-gray-10 border-gray-300`}
+              >
+                <span className="flex items-center justify-center text-black">
+                  Close
+                  <X />
+                </span>
+              </Button>
               {navigation.map((link) => (
                 <Link
                   key={link.label}
