@@ -1,6 +1,10 @@
 import { ArtworkPageProps, Tag } from "@/lib/models/ArtworkPageProps";
+import { PrcssPageProps } from "@/lib/models/PrcssPageProps";
 
-export const sortBy = (value: string, works: ArtworkPageProps[]) => {
+export const sortBy = (
+  value: string,
+  works: ArtworkPageProps[] | PrcssPageProps[]
+) => {
   let sorted = [...works];
 
   switch (value) {

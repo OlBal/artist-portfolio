@@ -1,20 +1,20 @@
 "use client";
 import Gallery from "@/components/Gallery/gallery";
 import { getScreenSize } from "@/components/shared/shared.utils";
-import { ArtworkPageProps } from "@/lib/models/ArtworkPageProps";
+import { PrcssPageProps } from "@/lib/models/PrcssPageProps";
 import { sortOptions } from "@/lib/schemas/options/sort.options";
-import { works } from "@/lib/schemas/works/works";
+import { prcss } from "@/lib/schemas/prcss/prcss.schema";
 import { useEffect, useState } from "react";
 import { sortBy } from "../utils/works-utils";
 
 export default function Prcss() {
-  const [sortedWorks, setWorks] = useState<ArtworkPageProps[]>(works);
+  const [sortedWorks, setWorks] = useState<PrcssPageProps[]>(prcss);
   const [view, setView] = useState<boolean>(true);
   const [screenSize, setScreenSize] = useState<string>(getScreenSize());
   const toggleView = () => setView(() => !view);
 
   const sort = (value: string) => {
-    let sortedWorks = sortBy(value, works);
+    let sortedWorks = sortBy(value, prcss);
     setWorks(sortedWorks);
   };
 
@@ -54,6 +54,11 @@ export default function Prcss() {
           </div>
         </div>
       </div>
+      <p className="px-6">
+        🖼️ Small works,✏️ drawings, 💭 ideas, 😴 procrastinations, doodles,
+        preparatory work and simply things that just didn't make the cut to be
+        in the running to be considered a real work of art.
+      </p>
 
       <Gallery sortedWorks={sortedWorks} />
     </div>

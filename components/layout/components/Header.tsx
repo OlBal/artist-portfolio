@@ -20,8 +20,8 @@ export default function Header() {
           <nav className="hidden md:flex gap-12 justify-around items-center">
             <menu>
               <ul className="flex gap-6">
-                {navigation.map((link) => (
-                  <li>
+                {navigation.map((link, index) => (
+                  <li key={index}>
                     <Link
                       key={link.label}
                       href={link.href}
