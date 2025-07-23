@@ -9,6 +9,14 @@
   font-style: normal;
 }
 
+@font-face {
+  font-family: "Recursive", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  font-weight: 600;
+  font-feature-settings: "CRSV" 0, "MONO" 0;
+}
+
 h1,
 h2,
 h3,
@@ -19,8 +27,13 @@ h6 {
   font-weight: 600;
 }
 
-body {
-  font-family: "Rubik";
+p,
+span,
+div,
+li,
+a {
+  font-family: "Recursive";
+  font-weight: 500;
 }
 
 @layer utilities {

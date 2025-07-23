@@ -28,12 +28,12 @@ export default function Prcss() {
 
   return (
     <div className="min-h-screen">
-      <div className="flex flex-row items-center justify-between gap-4 w-full  mx-auto py-1 px-2">
-        {screenSize !== "small" ? (
-          <button onClick={() => toggleView()}>
-            View {view ? "List" : "Grid"}
-          </button>
-        ) : null}
+      <div className="flex flex-row flex-wrap items-center justify-between gap-4 w-full mx-auto py-1 px-2">
+        <p className="px-6 w-full text-left mb-4 md:w-2/3 ">
+          🖼️ Small works,✏️ drawings, 💭 ideas, 😴 procrastinations, doodles,
+          preparatory work and simply things that just didn't make the cut to be
+          in the running to be considered a real work of art.
+        </p>
 
         <div className="flex flex-row items-center">
           <div className="flex flex-row no-wrap items-center">
@@ -54,11 +54,6 @@ export default function Prcss() {
           </div>
         </div>
       </div>
-      <p className="px-6">
-        🖼️ Small works,✏️ drawings, 💭 ideas, 😴 procrastinations, doodles,
-        preparatory work and simply things that just didn't make the cut to be
-        in the running to be considered a real work of art.
-      </p>
 
       <Gallery sortedWorks={sortedWorks} />
     </div>
