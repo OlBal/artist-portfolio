@@ -2,15 +2,9 @@
 
 import Footer from "@/components/layout/components/Footer";
 import Header from "@/components/layout/components/Header";
+import { Analytics } from "@vercel/analytics/next";
 import { useRef } from "react";
 import "./globals.css";
-
-// export const metadata: Metadata = {
-//   title: "v0 App",
-//   description: "Created with v0",
-//   generator: "v0.dev",
-// };
-
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -27,17 +21,23 @@ export default function RootLayout({
 
   return (
     <html lang="en">
-      <head></head>
+      <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link
+          rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossOrigin=""
+        />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Recursive:wght,CRSV,MONO@300..800,0..1,0..1&display=swap"
+          rel="stylesheet"
+        />
+      </head>
       <body>
-        {/* {displaySplash ? (
-          // <Splash />
-        ) : (
-          <> */}
         <Header />
         {children}
         <Footer />
-        {/* </> */}
-        {/* )} */}
+        <Analytics />
       </body>
     </html>
   );

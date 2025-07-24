@@ -1,10 +1,14 @@
-export type Exhibition = {
-  year: string;
+export type Exhibitions = {
+  year?: string;
+  shows: Exhibition[];
+};
+
+export interface Exhibition {
   title: string;
   venue: string;
   location: string;
   exhibitionType: ExhibitionType;
-};
+}
 
 export interface Education {
   university: string;
@@ -20,7 +24,7 @@ export enum ExhibitionType {
 }
 
 export type AboutPageProps = {
-  exhibitions: Exhibition[];
+  exhibitions: Exhibitions[];
   education: Education[];
 };
 
@@ -28,52 +32,75 @@ export const about: AboutPageProps = {
   exhibitions: [
     {
       year: "2023",
-      title: "Precious Postcards",
-      venue: "That Gallery",
-      location: "Bristol, UK",
-      exhibitionType: ExhibitionType.Group,
+      shows: [
+        {
+          title: "Precious Postcards",
+          venue: "That Gallery",
+          location: "Bristol, UK",
+          exhibitionType: ExhibitionType.Group,
+        },
+      ],
     },
     {
       year: "2020",
-      title: "Precious Postcards",
-      venue: " Hart's ",
-      location: "Bristol, UK",
-      exhibitionType: ExhibitionType.Solo,
+      shows: [
+        {
+          title: "Precious Postcards",
+          venue: " Hart's ",
+          location: "Bristol, UK",
+          exhibitionType: ExhibitionType.Solo,
+        },
+      ],
     },
     {
       year: "2019",
-      title: "The Contraband Collection: Bristol Edition",
-      venue: "The Latch",
-      location: "Bristol, UK",
-      exhibitionType: ExhibitionType.Group,
+      shows: [
+        {
+          title: "The Contraband Collection: Bristol Edition",
+          venue: "The Latch",
+          location: "Bristol, UK",
+          exhibitionType: ExhibitionType.Group,
+        },
+        {
+          title: "Order in the Technicolour Chaos",
+          venue: " Paintworks",
+          location: "Bristol, UK",
+          exhibitionType: ExhibitionType.Duo,
+        },
+      ],
     },
     {
-      year: "2019",
-      title: "Order in the Technicolour Chaos",
-      venue: " Paintworks",
-      location: "Bristol, UK",
-      exhibitionType: ExhibitionType.Duo,
-    },
-    {
-      year: "2019",
-      title: "Note to Self",
-      venue: "London Graphics Centre",
-      location: "London, UK",
-      exhibitionType: ExhibitionType.Group,
+      year: "2014",
+      shows: [
+        {
+          title: "Note to Self",
+          venue: "London Graphics Centre",
+          location: "London, UK",
+          exhibitionType: ExhibitionType.Group,
+        },
+      ],
     },
     {
       year: "2011",
-      title: "Bristol Design Festival",
-      venue: " The Old Fire Station",
-      location: "Bristol, UK",
-      exhibitionType: ExhibitionType.Group,
+      shows: [
+        {
+          title: "Bristol Design Festival",
+          venue: " The Old Fire Station",
+          location: "Bristol, UK",
+          exhibitionType: ExhibitionType.Group,
+        },
+      ],
     },
     {
       year: "2008",
-      title: "Cans Festival",
-      venue: "Waterloo Tunnels",
-      location: "London, UK",
-      exhibitionType: ExhibitionType.Group,
+      shows: [
+        {
+          title: "Cans Festival",
+          venue: "Waterloo Tunnels",
+          location: "London, UK",
+          exhibitionType: ExhibitionType.Group,
+        },
+      ],
     },
   ],
   education: [

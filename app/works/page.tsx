@@ -1,7 +1,7 @@
 "use client";
-import Gallery from "@/components/Gallery/gallery";
 import List from "@/components/List/list";
-import { getScreenSize } from "@/components/shared/shared.utils";
+import Gallery from "@/components/ui/Gallery/gallery";
+import { getScreenSize } from "@/components/ui/utils/shared.utils";
 import { ArtworkPageProps, Tag } from "@/lib/models/ArtworkPageProps";
 import { filterOptions } from "@/lib/schemas/options/filter.options";
 import { sortOptions } from "@/lib/schemas/options/sort.options";
