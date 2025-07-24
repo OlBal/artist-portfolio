@@ -1,6 +1,6 @@
 "use client";
-import Gallery from "@/components/Gallery/gallery";
-import { getScreenSize } from "@/components/shared/shared.utils";
+import Gallery from "@/components/ui/Gallery/gallery";
+import { getScreenSize } from "@/components/ui/utils/shared.utils";
 import { PrcssPageProps } from "@/lib/models/PrcssPageProps";
 import { prcss } from "@/lib/schemas/prcss/prcss.schema";
 import { useEffect, useState } from "react";

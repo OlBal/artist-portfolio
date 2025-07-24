@@ -29,10 +29,6 @@ export default function RootLayout({
           crossOrigin=""
         />
         <link
-          href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap"
-          rel="stylesheet"
-        />
-        <link
           href="https://fonts.googleapis.com/css2?family=Recursive:wght,CRSV,MONO@300..800,0..1,0..1&display=swap"
           rel="stylesheet"
         />

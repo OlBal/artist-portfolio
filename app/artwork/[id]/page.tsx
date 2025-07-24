@@ -1,6 +1,6 @@
 "use client";
-import FullscreenImage from "@/components/FullScreenImage/FullScreenImage";
 import { Button } from "@/components/ui/button";
+import FullscreenImage from "@/components/ui/FullScreenImage/FullScreenImage";
 import { ArtworkPageProps } from "@/lib/models/ArtworkPageProps";
 import { works } from "@/lib/schemas/works/works";
 import { ArrowLeft, Expand } from "lucide-react";
