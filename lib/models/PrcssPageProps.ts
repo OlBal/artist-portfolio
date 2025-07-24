@@ -8,4 +8,6 @@ export interface PrcssPageProps {
   description: string;
   available: boolean;
   src: string;
+  medium?: string;
+  surface?: string;
 }

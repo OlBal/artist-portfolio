@@ -1,8 +1,9 @@
 "use client";
-import List from "@/components/List/list";
 import Gallery from "@/components/ui/Gallery/gallery";
+import List from "@/components/ui/List/list";
 import { getScreenSize } from "@/components/ui/utils/shared.utils";
 import { ArtworkPageProps, Tag } from "@/lib/models/ArtworkPageProps";
+import { PrcssPageProps } from "@/lib/models/PrcssPageProps";
 import { filterOptions } from "@/lib/schemas/options/filter.options";
 import { sortOptions } from "@/lib/schemas/options/sort.options";
 import { works } from "@/lib/schemas/works/works";
@@ -10,7 +11,9 @@ import { useEffect, useState } from "react";
 import { sortBy } from "../utils/works-utils";
 
 export default function Works() {
-  const [sortedWorks, setWorks] = useState<ArtworkPageProps[]>(works);
+  const [sortedWorks, setWorks] = useState<
+    ArtworkPageProps[] | PrcssPageProps[]
+  >(works);
   const [selectedFilters, setSelectedFilters] = useState<string[]>([]);
   const [view, setView] = useState<boolean>(true);
   const [screenSize, setScreenSize] = useState<string>(getScreenSize());

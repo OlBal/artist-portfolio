@@ -1,18 +1,19 @@
 import { ArtworkPageProps } from "@/lib/models/ArtworkPageProps";
+import { PrcssPageProps } from "@/lib/models/PrcssPageProps";
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 type ListRowProps = {
-  row: ArtworkPageProps;
+  row: ArtworkPageProps | PrcssPageProps;
 };
 
 export default function ListRow({ row }: ListRowProps) {
   let preview: boolean = false;
-  let image: ArtworkPageProps = preview ? row : row;
+  let image: ArtworkPageProps | PrcssPageProps = preview ? row : row;
 
-  const [previewImage, setViewPreview] = useState<ArtworkPageProps | undefined>(
-    undefined
-  );
+  const [previewImage, setViewPreview] = useState<
+    ArtworkPageProps | PrcssPageProps | undefined
+  >(undefined);
   const [viewPreview, setPreview] = useState<boolean>(false);
 
   const displayPreview = () => {
@@ -24,7 +25,7 @@ export default function ListRow({ row }: ListRowProps) {
     <Link
       href={`/artwork/${row.id}`}
       key={row.id}
-      className="group self-center justify-self-center w-full "
+      className="group self-center justify-self-center w-full"
       onMouseEnter={displayPreview}
       onMouseLeave={displayPreview}
     >

@@ -1,4 +1,5 @@
 import { ArtworkPageProps } from "@/lib/models/ArtworkPageProps";
+import { PrcssPageProps } from "@/lib/models/PrcssPageProps";
 import ListRow from "../List-Row/list-row";
 
 type GalleryProps = {
@@ -15,7 +16,7 @@ export default function List({ sortedWorks }: GalleryProps) {
         <li className="flex-1 text-md md:text-lg ">Surface</li>
         <li className="flex-1 text-md md:text-lg ">Available</li>
       </ul>
-      {sortedWorks.map((artwork: ArtworkPageProps) => (
+      {sortedWorks.map((artwork: ArtworkPageProps | PrcssPageProps) => (
         <ListRow key={artwork.id} row={artwork} />
       ))}
     </div>
