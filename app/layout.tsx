@@ -2,6 +2,7 @@
 
 import Footer from "@/components/layout/components/Footer";
 import Header from "@/components/layout/components/Header";
+import { Analytics } from "@vercel/analytics/next";
 import { useRef } from "react";
 import "./globals.css";
 export default function RootLayout({
@@ -40,6 +41,7 @@ export default function RootLayout({
         <Header />
         {children}
         <Footer />
+        <Analytics />
       </body>
     </html>
   );

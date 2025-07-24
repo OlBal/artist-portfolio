@@ -21,22 +21,13 @@ export default function AboutPage() {
           />
         </div>
 
-        <hr />
-
         <h1 className="text-xl md:text-lg sm:text-md font-bold mb-4">About</h1>
 
-        <div className="grid md:grid-cols-2 sm:grid-cols-1 gap-12 items-start my-4">
-          <div className="space-y-6">
-            <p>
-              Oliver Ballon is a contemporary artist whose work explores the
-              intersection of nature, emotion, and human experience. With a
-              background in both fine arts and environmental science, her
-              paintings bridge the gap between the tangible world and our
-              emotional responses to it.
-            </p>
-            <hr />
+        <div className="grid md:grid-cols-2 sm:grid-cols-1 gap-6 items-start my-4  border-t border-gray-200 p-4">
+          <div className="space-y-6 ">
+            <p>Oliver Ballon is a painter and maker based in Bristol, UK.</p>
 
-            <div className="mt-4">
+            <div className="mt-4 ">
               <h4 className="text-xl font-bold mb-8 flex items-center">
                 Statement
               </h4>
@@ -76,8 +67,6 @@ export default function AboutPage() {
             </div>
           </div>
         </div>
-
-        <hr />
 
         <div className="grid md:grid-cols-2 gap-12 items-start">
           <div className="mt-4">
