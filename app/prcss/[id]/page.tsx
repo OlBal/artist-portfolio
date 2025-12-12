@@ -2,7 +2,7 @@
 import { Button } from "@/components/ui/button";
 import FullscreenImage from "@/components/ui/FullScreenImage/FullScreenImage";
 import { PrcssPageProps } from "@/lib/models/PrcssPageProps";
-import { works } from "@/lib/schemas/works/works";
+import { prcss } from "@/lib/schemas/prcss/prcss.schema";
 import { ArrowLeft, Expand } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
@@ -17,8 +17,7 @@ export default function PrcssWorkPage() {
       : Array.isArray(params.id)
       ? params.id[0]
       : "";
-  const artwork = works.find((artwork: PrcssPageProps) => artwork.id === id);
-
+  const artwork = prcss.find((artwork: PrcssPageProps) => artwork.id === id);
   const [fullscreen, setFullscreen] = useState(false);
 
   function displayFullscreen() {
@@ -58,34 +57,6 @@ export default function PrcssWorkPage() {
                     <span className="sr-only">View full size</span>
                   </Button>
                 </div>
-              </div>
-
-              <div className="space-y-8 p-4 ">
-                {artwork.linked ? (
-                  <div className=" border-t">
-                    <div className="flex justify-between items-center">
-                      <div className="flex items-center row">
-                        {artwork.linked?.map((linkedWork) => (
-                          <div className="pr-4">
-                            <Image
-                              key={linkedWork.id}
-                              src={linkedWork.src}
-                              alt={linkedWork.title}
-                              className="object-cover object-center rounded-lg"
-                              quality={100}
-                              placeholder="blur"
-                              blurDataURL={linkedWork.src}
-                              objectFit="contain"
-                              width={250}
-                              height={300}
-                              loading="lazy"
-                            />
-                          </div>
-                        ))}
-                      </div>
-                    </div>
-                  </div>
-                ) : undefined}
               </div>
             </div>
           ) : (

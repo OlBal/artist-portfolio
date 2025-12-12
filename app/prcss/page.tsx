@@ -10,7 +10,6 @@ export default function Prcss() {
   const [sortedWorks, setWorks] = useState<PrcssPageProps[]>(prcss);
   const [view, setView] = useState<boolean>(true);
   const [screenSize, setScreenSize] = useState<string>(getScreenSize());
-  const toggleView = () => setView(() => !view);
 
   const sort = (value: string) => {
     let sortedWorks = sortBy(value, prcss);

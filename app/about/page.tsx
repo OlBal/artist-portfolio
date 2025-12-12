@@ -34,34 +34,33 @@ export default function AboutPage() {
 
               <div className="prose max-w-none">
                 <p>
-                  My work is an ongoing exploration of the emotional landscapes
-                  we inhabit. I am fascinated by how our inner emotional states
-                  color our perception of the physical world around us, and how
-                  the natural environment in turn shapes our emotional
-                  responses.
+                  Oliver Ballon is a Bristol-based artist whose works focus on
+                  extruding fantastical narratives out of largely traditional
+                  subject matter, resembling a stoic magical realism, of
+                  traditional still-life compositions and raunchy abstraction.
                 </p>
                 <p>
-                  Through abstraction, I seek to capture not just the visual
-                  essence of a place or moment, but the emotional resonance it
-                  creates. Each painting begins with observations from
-                  nature—the way light filters through trees, how water reflects
-                  and distorts, the patterns of growth and decay—but evolves
-                  through an intuitive process of layering, scraping, and
-                  mark-making.
+                  Influenced by late-stage abstract graffiti, the psychedelic
+                  1960s California and Japan, and mid-century abstract
+                  expressionism. Many of the compositions are color schemes and
+                  forms merged and abstracted from mundane sources like vintage
+                  furniture catalogues and random items found on the street.
+                  Whilst others are taken from the artist’s domestic living
+                  spaces and placed into an entirely new visual lexicon, giving
+                  more meaning and a sense of narrative around them.
                 </p>
                 <p>
-                  Color is central to my practice. I use bold, vibrant palettes
-                  to evoke emotional states, creating visual experiences that
-                  invite viewers to connect with their own emotional responses
-                  to color and form. Texture adds another dimension, making the
-                  invisible tangible and bringing a physical presence to
-                  emotional states that are often difficult to articulate.
+                  The primary focus of this endeavor is to manipulate reality
+                  and craft novel narratives. By transforming the mundane into a
+                  more twisted vision of the ordinary, the endeavor pushes the
+                  boundaries of what is expected and refined.
                 </p>
                 <p>
-                  My hope is that viewers find in my work a space for
-                  reflection, a moment of recognition, or perhaps a new way of
-                  seeing their own emotional connection to the world around
-                  them.
+                  The resulting experiences sometimes play more towards humor
+                  than towards the seriousness of the traditional subject matter
+                  at hand. Flowers, fruit, and landscapes, always held as
+                  traditional and easy-to-follow subject matter, are mutated
+                  into intense and often graphic departures from expectation.
                 </p>
               </div>
             </div>
