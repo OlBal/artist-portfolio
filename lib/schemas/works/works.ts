@@ -7,8 +7,10 @@ import { works2022 } from "./2022";
 import { works2023 } from "./2023";
 import { works2024 } from "./2024";
 import { works2025 } from "./2025";
+import { works2026 } from "./2026";
 
 export const works: ArtworkPageProps[] = [
+  ...works2026,
   ...works2025,
   ...works2024,
   ...works2023,
