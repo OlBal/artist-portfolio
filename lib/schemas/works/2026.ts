@@ -1,6 +1,6 @@
 import { ArtworkPageProps } from "@/lib/models/ArtworkPageProps";
 
-export const works2025: ArtworkPageProps[] = [
+export const works2026: ArtworkPageProps[] = [
   {
     id: "the-handshake",
     title: "The Handshake",
