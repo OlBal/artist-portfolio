@@ -11,7 +11,7 @@ export const works2021: ArtworkPageProps[] = [
     width: 40,
     description: "Reworking of a Thomas Hart Benton painting.",
     available: true,
-    src: "/works/still-life-with-spring-flowers.webp",
+    src: "/optimized/works/still-life-with-spring-flowers.webp",
   },
   {
     id: "untitled",
@@ -24,7 +24,7 @@ export const works2021: ArtworkPageProps[] = [
     description:
       "What you get when you're looking at infrared heat map images alot.",
     available: true,
-    src: "/works/untitled.webp",
+    src: "/optimized/works/untitled.webp",
     tags: ["abstract"],
   },
   {
@@ -37,7 +37,7 @@ export const works2021: ArtworkPageProps[] = [
     width: 400,
     description: "Apple on stone with a flump based rainbow in the background.",
     available: true,
-    src: "/works/apple-on-stone.webp",
+    src: "/optimized/works/apple-on-stone.webp",
   },
 
   {
@@ -50,7 +50,7 @@ export const works2021: ArtworkPageProps[] = [
     width: 400,
     description: "Fun times with the tubes.",
     available: false,
-    src: "/works/are-we-having-fun-yet.webp",
+    src: "/optimized/works/are-we-having-fun-yet.webp",
     tags: ["abstract"],
   },
   {
@@ -64,7 +64,7 @@ export const works2021: ArtworkPageProps[] = [
     description:
       "It is like when you're a kid and you wrap a piece of string around your finger and it turns purple. But it's a peach.",
     available: true,
-    src: "/works/wet-fruit.webp",
+    src: "/optimized/works/wet-fruit.webp",
   },
   {
     id: "hotdog",
@@ -76,7 +76,7 @@ export const works2021: ArtworkPageProps[] = [
     width: 25,
     description: "Tubular forms and bright colours.",
     available: true,
-    src: "/works/hotdog.webp",
+    src: "/optimized/works/hotdog.webp",
     tags: ["abstract"],
   },
 
@@ -90,7 +90,7 @@ export const works2021: ArtworkPageProps[] = [
     width: 25,
     description: "Blowing'em raspberries",
     available: true,
-    src: "/works/raspberry.webp",
+    src: "/optimized/works/raspberry.webp",
     tags: ["fruit", "still-life"],
   },
   {
@@ -103,7 +103,7 @@ export const works2021: ArtworkPageProps[] = [
     width: 35,
     description: "Bauhaus vase with fake flowers",
     available: true,
-    src: "/works/bauhaus-vase-2.webp",
+    src: "/optimized/works/bauhaus-vase-2.webp",
   },
   {
     id: "discs",
@@ -115,7 +115,7 @@ export const works2021: ArtworkPageProps[] = [
     width: 29.7,
     description: "Dics, Discs, Discs",
     available: true,
-    src: "/works/discs.webp",
+    src: "/optimized/works/discs.webp",
     tags: ["abstract"],
   },
   {
@@ -129,7 +129,7 @@ export const works2021: ArtworkPageProps[] = [
     description:
       "A twisted peeled apple resting utop 2 rocks. And some leaves. Don't forget the leaves.",
     available: true,
-    src: "/works/mapple.webp",
+    src: "/optimized/works/mapple.webp",
     tags: ["fruit", "still-life"],
   },
   {
@@ -142,7 +142,7 @@ export const works2021: ArtworkPageProps[] = [
     width: 35,
     description: "Everything is proped up on itself, always.",
     available: true,
-    src: "/works/chaotic-neutral.webp",
+    src: "/optimized/works/chaotic-neutral.webp",
     tags: ["abstract"],
   },
 ];

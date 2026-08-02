@@ -11,7 +11,7 @@ export const works2026: ArtworkPageProps[] = [
     width: 30,
     description: "A french metal planter on grass with flowers shaking hands.",
     available: true,
-    src: "/works/the-handshake.webp",
+    src: "/optimized/works/the-handshake.webp",
     tags: ["wildlife", "scene", "still-life"],
   },
 ];
