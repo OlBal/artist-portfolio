@@ -1,8 +1,16 @@
+"use client";
+
 import { navigation } from "@/lib/schemas/navigation";
 import { Instagram, Mail, Menu, X } from "lucide-react";
 import Link from "next/link";
+import { useState } from "react";
 
 export default function Header() {
+  const [open, setOpen] = useState(false);
+
+  const toggleMenu = () => setOpen((current) => !current);
+  const closeMenu = () => setOpen(false);
+
   return (
     <header className="sticky top-0 z-10 w-auto border-b bg-white/80 backdrop-blur-sm">
       <div className="flex h-12 items-center justify-between px-4">
@@ -45,49 +53,64 @@ export default function Header() {
             </div>
           </nav>
 
-          <details className="md:hidden">
-            <summary className="list-none cursor-pointer rounded border border-gray-300 px-3 py-2 text-sm text-black bg-transparent hover:bg-gray-100">
+          <div className="md:hidden">
+            <button
+              type="button"
+              onClick={toggleMenu}
+              aria-label={open ? "Close menu" : "Open menu"}
+              className="rounded border border-gray-300 px-3 py-2 text-sm text-black bg-transparent hover:bg-gray-100"
+            >
               <span className="flex items-center gap-2">
                 <Menu className="h-4 w-4" />
-                Menu
+                {open ? "Close" : "Menu"}
               </span>
-            </summary>
+            </button>
 
-            <div className="pl-2 pt-2 fixed inset-0 z-20 bg-white h-screen flex flex-col justify-center items-center gap-5">
-              <summary className="list-none cursor-pointer absolute top-10 right-5 rounded border border-gray-300 px-3 py-2 text-sm text-black bg-transparent hover:bg-gray-100">
-                <span className="flex items-center gap-2">
-                  Close
-                  <X className="h-4 w-4" />
-                </span>
-              </summary>
-
-              {navigation.map((link) => (
-                <Link
-                  key={link.label}
-                  href={link.href}
-                  className="block px-4 py-2 text-gray-700 hover:bg-gray-100 rounded transition-colors"
+            {open ? (
+              <div className="pl-2 pt-2 fixed inset-0 z-20 bg-white h-screen flex flex-col justify-center items-center gap-5">
+                <button
+                  type="button"
+                  onClick={closeMenu}
+                  aria-label="Close menu"
+                  className="absolute top-10 right-5 rounded border border-gray-300 px-3 py-2 text-sm text-black bg-transparent hover:bg-gray-100"
                 >
-                  {link.label}
-                </Link>
-              ))}
-              <a
-                href="https://instagram.com/olliesavestheworld"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-2 px-4 py-2 text-gray-700 hover:bg-gray-100 rounded transition-colors"
-              >
-                <Instagram className="h-5 w-5" />
-                Instagram
-              </a>
-              <a
-                href="mailto:hello@oliverballon.com"
-                rel="noopener"
-                className="flex items-center gap-2 px-4 py-2 text-gray-700 hover:bg-gray-100 rounded transition-colors"
-              >
-                <Mail className="h-5 w-5" /> Email
-              </a>
-            </div>
-          </details>
+                  <span className="flex items-center gap-2">
+                    Close
+                    <X className="h-4 w-4" />
+                  </span>
+                </button>
+
+                {navigation.map((link) => (
+                  <Link
+                    key={link.label}
+                    href={link.href}
+                    onClick={closeMenu}
+                    className="block px-4 py-2 text-gray-700 hover:bg-gray-100 rounded transition-colors"
+                  >
+                    {link.label}
+                  </Link>
+                ))}
+                <a
+                  href="https://instagram.com/olliesavestheworld"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={closeMenu}
+                  className="flex items-center gap-2 px-4 py-2 text-gray-700 hover:bg-gray-100 rounded transition-colors"
+                >
+                  <Instagram className="h-5 w-5" />
+                  Instagram
+                </a>
+                <a
+                  href="mailto:hello@oliverballon.com"
+                  rel="noopener"
+                  onClick={closeMenu}
+                  className="flex items-center gap-2 px-4 py-2 text-gray-700 hover:bg-gray-100 rounded transition-colors"
+                >
+                  <Mail className="h-5 w-5" /> Email
+                </a>
+              </div>
+            ) : null}
+          </div>
         </div>
       </div>
     </header>

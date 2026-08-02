@@ -1,7 +1,7 @@
 import Footer from "@/components/layout/components/Footer";
 import Header from "@/components/layout/components/Header";
 import { Analytics } from "@vercel/analytics/next";
-import "./globals.css";
+import "../styles/globals.css";
 
 export default function RootLayout({
   children,
