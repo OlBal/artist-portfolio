@@ -11,7 +11,7 @@ export const works2024: ArtworkPageProps[] = [
     width: 40,
     description: "A pretty spiritually loose picinic by the looks of things.",
     available: true,
-    src: "/works/picnic.webp",
+    src: "/optimized/works/picnic.webp",
     tags: ["fruit", "food"],
   },
   {
@@ -25,7 +25,7 @@ export const works2024: ArtworkPageProps[] = [
     description:
       "Yeeeeeeehaw mother fucker. A sock puppet cowboy with a big ol' hat.",
     available: true,
-    src: "/works/cowboy.webp",
+    src: "/optimized/works/cowboy.webp",
   },
   {
     id: "pears",
@@ -37,6 +37,6 @@ export const works2024: ArtworkPageProps[] = [
     width: 25,
     description: "Some pears folded over each other.",
     available: true,
-    src: "/works/pears.webp",
+    src: "/optimized/works/pears.webp",
   },
 ];

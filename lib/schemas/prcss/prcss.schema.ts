@@ -9,7 +9,7 @@ export const prcss: PrcssPageProps[] = [
     width: 40,
     description: "Incense",
     available: false,
-    src: "/prcss/goddamn-internet.webp",
+    src: "/optimized/prcss/goddamn-internet.webp",
   },
   {
     id: "mushrooms-sketch",
@@ -19,7 +19,7 @@ export const prcss: PrcssPageProps[] = [
     width: 40,
     description: "Mushrooms sketch",
     available: false,
-    src: "/prcss/mushrooms-sketch.webp",
+    src: "/optimized/prcss/mushrooms-sketch.webp",
   },
   {
     id: "nom",
@@ -29,7 +29,7 @@ export const prcss: PrcssPageProps[] = [
     width: 40,
     description: "Nom Nom",
     available: false,
-    src: "/prcss/nom.webp",
+    src: "/optimized/prcss/nom.webp",
   },
   {
     id: "picnic-sketch",
@@ -39,7 +39,7 @@ export const prcss: PrcssPageProps[] = [
     width: 40,
     description: "Picnic sketch",
     available: false,
-    src: "/prcss/picnic-sketch.webp",
+    src: "/optimized/prcss/picnic-sketch.webp",
   },
   {
     id: "all-day-everyday",
@@ -49,7 +49,7 @@ export const prcss: PrcssPageProps[] = [
     width: 40,
     description: "A bunch of fictional flowers",
     available: false,
-    src: "/prcss/all-day-everyday.webp",
+    src: "/optimized/prcss/all-day-everyday.webp",
   },
   {
     id: "abstract-sketch",
@@ -59,7 +59,7 @@ export const prcss: PrcssPageProps[] = [
     width: 40,
     description: "A bunch of fictional flowers",
     available: false,
-    src: "/prcss/abstract-sketch.webp",
+    src: "/optimized/prcss/abstract-sketch.webp",
   },
   {
     id: "all-this-noise",
@@ -69,7 +69,7 @@ export const prcss: PrcssPageProps[] = [
     width: 40,
     description: "A bunch of fictional flowers",
     available: false,
-    src: "/prcss/all-this-noise.webp",
+    src: "/optimized/prcss/all-this-noise.webp",
   },
   {
     id: "allday",
@@ -79,7 +79,7 @@ export const prcss: PrcssPageProps[] = [
     width: 40,
     description: "Allday",
     available: false,
-    src: "/prcss/allday.webp",
+    src: "/optimized/prcss/allday.webp",
   },
   {
     id: "apple-pastel",
@@ -89,7 +89,7 @@ export const prcss: PrcssPageProps[] = [
     width: 40,
     description: "A bunch of fictional flowers",
     available: false,
-    src: "/prcss/apple-pastel.webp",
+    src: "/optimized/prcss/apple-pastel.webp",
   },
   {
     id: "apple-sketch",
@@ -99,7 +99,7 @@ export const prcss: PrcssPageProps[] = [
     width: 40,
     description: "A bunch of fictional flowers",
     available: false,
-    src: "/prcss/apple-sketch.webp",
+    src: "/optimized/prcss/apple-sketch.webp",
   },
   {
     id: "basket-apples-sketch",
@@ -109,7 +109,7 @@ export const prcss: PrcssPageProps[] = [
     width: 40,
     description: "A bunch of fictional flowers",
     available: false,
-    src: "/prcss/basket-apples-sketch.webp",
+    src: "/optimized/prcss/basket-apples-sketch.webp",
   },
   {
     id: "basket-oranges-sketch",
@@ -119,7 +119,7 @@ export const prcss: PrcssPageProps[] = [
     width: 40,
     description: "A bunch of fictional flowers",
     available: false,
-    src: "/prcss/basket-oranges-sketch.webp",
+    src: "/optimized/prcss/basket-oranges-sketch.webp",
   },
   {
     id: "blanket",
@@ -129,7 +129,7 @@ export const prcss: PrcssPageProps[] = [
     width: 40,
     description: "A bunch of fictional flowers",
     available: false,
-    src: "/prcss/blanket.webp",
+    src: "/optimized/prcss/blanket.webp",
   },
   {
     id: "blue-fruit-sketch",
@@ -139,7 +139,7 @@ export const prcss: PrcssPageProps[] = [
     width: 40,
     description: "A bunch of fictional flowers",
     available: false,
-    src: "/prcss/blue-fruit-sketch.webp",
+    src: "/optimized/prcss/blue-fruit-sketch.webp",
   },
   {
     id: "burning-down-the-house",
@@ -149,7 +149,7 @@ export const prcss: PrcssPageProps[] = [
     width: 40,
     description: "Burning Down The House",
     available: false,
-    src: "/prcss/burning-down-the-house.webp",
+    src: "/optimized/prcss/burning-down-the-house.webp",
   },
   {
     id: "float",
@@ -159,7 +159,7 @@ export const prcss: PrcssPageProps[] = [
     width: 40,
     description: "Burning Down The House",
     available: false,
-    src: "/prcss/float.webp",
+    src: "/optimized/prcss/float.webp",
   },
   {
     id: "incense",
@@ -169,7 +169,7 @@ export const prcss: PrcssPageProps[] = [
     width: 40,
     description: "Incense",
     available: false,
-    src: "/prcss/incense.webp",
+    src: "/optimized/prcss/incense.webp",
   },
   {
     id: "flower-sketch",
@@ -179,7 +179,7 @@ export const prcss: PrcssPageProps[] = [
     width: 40,
     description: "Incense",
     available: false,
-    src: "/prcss/flower-sketch.webp",
+    src: "/optimized/prcss/flower-sketch.webp",
   },
   {
     id: "flower-sketching-abstract",
@@ -189,7 +189,7 @@ export const prcss: PrcssPageProps[] = [
     width: 40,
     description: "Incense",
     available: false,
-    src: "/prcss/flower-sketching-abstract.webp",
+    src: "/optimized/prcss/flower-sketching-abstract.webp",
   },
 
   {
@@ -200,7 +200,7 @@ export const prcss: PrcssPageProps[] = [
     width: 40,
     description: "Incense",
     available: false,
-    src: "/prcss/grit-teeth-sketch.webp",
+    src: "/optimized/prcss/grit-teeth-sketch.webp",
   },
   {
     id: "landscape",
@@ -210,7 +210,7 @@ export const prcss: PrcssPageProps[] = [
     width: 40,
     description: "Incense",
     available: false,
-    src: "/prcss/landscape.webp",
+    src: "/optimized/prcss/landscape.webp",
   },
   {
     id: "limit",
@@ -220,7 +220,7 @@ export const prcss: PrcssPageProps[] = [
     width: 40,
     description: "Limt",
     available: false,
-    src: "/prcss/limit.webp",
+    src: "/optimized/prcss/limit.webp",
   },
 
   {
@@ -231,7 +231,7 @@ export const prcss: PrcssPageProps[] = [
     width: 40,
     description: "Pharmacy sketch",
     available: false,
-    src: "/prcss/pharmacy-sketch.webp",
+    src: "/optimized/prcss/pharmacy-sketch.webp",
   },
   {
     id: "phone-sketch",
@@ -241,7 +241,7 @@ export const prcss: PrcssPageProps[] = [
     width: 40,
     description: "Pharmacy sketch",
     available: false,
-    src: "/prcss/phone-sketch.webp",
+    src: "/optimized/prcss/phone-sketch.webp",
   },
 
   {
@@ -252,7 +252,7 @@ export const prcss: PrcssPageProps[] = [
     width: 40,
     description: "Pots sketch",
     available: false,
-    src: "/prcss/pots-sketch.webp",
+    src: "/optimized/prcss/pots-sketch.webp",
   },
   {
     id: "random-plants-sketch",
@@ -262,7 +262,7 @@ export const prcss: PrcssPageProps[] = [
     width: 40,
     description: "Random Plants sketch",
     available: false,
-    src: "/prcss/random-plants-sketch.webp",
+    src: "/optimized/prcss/random-plants-sketch.webp",
   },
   {
     id: "real",
@@ -272,7 +272,7 @@ export const prcss: PrcssPageProps[] = [
     width: 40,
     description: "Real",
     available: false,
-    src: "/prcss/real.webp",
+    src: "/optimized/prcss/real.webp",
   },
   {
     id: "smiles",
@@ -282,7 +282,7 @@ export const prcss: PrcssPageProps[] = [
     width: 40,
     description: "Smiles",
     available: false,
-    src: "/prcss/smiles.webp",
+    src: "/optimized/prcss/smiles.webp",
   },
   {
     id: "the-end-pot-sketch",
@@ -292,7 +292,7 @@ export const prcss: PrcssPageProps[] = [
     width: 40,
     description: "The end pot sketch",
     available: false,
-    src: "/prcss/the-end-pot-sketch.webp",
+    src: "/optimized/prcss/the-end-pot-sketch.webp",
   },
   {
     id: "the-end",
@@ -302,7 +302,7 @@ export const prcss: PrcssPageProps[] = [
     width: 40,
     description: "The end",
     available: false,
-    src: "/prcss/the-end.webp",
+    src: "/optimized/prcss/the-end.webp",
   },
   {
     id: "three-get-gone",
@@ -312,7 +312,7 @@ export const prcss: PrcssPageProps[] = [
     width: 40,
     description: "Three Get Gone",
     available: false,
-    src: "/prcss/three-get-gone.webp",
+    src: "/optimized/prcss/three-get-gone.webp",
   },
   {
     id: "tomato-orange",
@@ -322,6 +322,6 @@ export const prcss: PrcssPageProps[] = [
     width: 40,
     description: "Tomato Orange",
     available: false,
-    src: "/prcss/tomato-orange.webp",
+    src: "/optimized/prcss/tomato-orange.webp",
   },
 ];

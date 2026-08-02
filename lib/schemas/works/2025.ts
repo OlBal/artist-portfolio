@@ -11,7 +11,7 @@ export const works2025: ArtworkPageProps[] = [
     width: 60,
     description: "Mushrooms in a woodland maybe?",
     available: true,
-    src: "/works/mushrooms.webp",
+    src: "/optimized/works/mushrooms.webp",
     tags: ["wildlife", "scene"],
   },
   {
@@ -24,7 +24,7 @@ export const works2025: ArtworkPageProps[] = [
     width: 15,
     description: "What, you never seen a voguing dandelion before?.",
     available: true,
-    src: "/works/vogue.webp",
+    src: "/optimized/works/vogue.webp",
   },
   {
     id: "coffee-pot",
@@ -36,7 +36,7 @@ export const works2025: ArtworkPageProps[] = [
     width: 20,
     description: "A canary coffee pot.",
     available: true,
-    src: "/works/coffee-pot.webp",
+    src: "/optimized/works/coffee-pot.webp",
     tags: ["still-life"],
   },
   {
@@ -49,7 +49,7 @@ export const works2025: ArtworkPageProps[] = [
     width: 40,
     description: "A bunch of fictional flowers",
     available: true,
-    src: "/works/fictional-flowers-4.webp",
+    src: "/optimized/works/fictional-flowers-4.webp",
     tags: ["abstract", "still-life"],
   },
 
@@ -64,7 +64,7 @@ export const works2025: ArtworkPageProps[] = [
     description:
       "A small woodland scene with a few trees and total disregard for perspective.",
     available: true,
-    src: "/works/woods.webp",
+    src: "/optimized/works/woods.webp",
   },
   {
     id: "pear",
@@ -76,7 +76,7 @@ export const works2025: ArtworkPageProps[] = [
     width: 15,
     description: "A pair with a piercing",
     available: true,
-    src: "/works/pear.webp",
+    src: "/optimized/works/pear.webp",
     tags: ["fruit", "food"],
   },
   {
@@ -90,7 +90,7 @@ export const works2025: ArtworkPageProps[] = [
     description:
       "Saw a spider web with dew drops that I thought would look good with a bow on.",
     available: true,
-    src: "/works/bow.webp",
+    src: "/optimized/works/bow.webp",
   },
   {
     id: "apple",
@@ -102,7 +102,7 @@ export const works2025: ArtworkPageProps[] = [
     width: 20,
     description: "Apple with a bum.",
     available: true,
-    src: "/works/apple.webp",
+    src: "/optimized/works/apple.webp",
   },
   {
     id: "mushroom-study",
@@ -114,7 +114,7 @@ export const works2025: ArtworkPageProps[] = [
     width: 15,
     description: "Small study for a larger painting",
     available: true,
-    src: "/works/mushroom-study.webp",
+    src: "/optimized/works/mushroom-study.webp",
     tags: ["wildlife", "scene"],
   },
 ];

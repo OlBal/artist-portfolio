@@ -1,17 +1,19 @@
-import { Button } from "@/components/ui/button";
+"use client";
+
 import { navigation } from "@/lib/schemas/navigation";
-import { Instagram, Mail, X } from "lucide-react";
+import { Instagram, Mail, Menu, X } from "lucide-react";
 import Link from "next/link";
 import { useState } from "react";
 
 export default function Header() {
   const [open, setOpen] = useState(false);
-  const toggleMenu = () => setOpen(() => !open);
+
+  const toggleMenu = () => setOpen((current) => !current);
   const closeMenu = () => setOpen(false);
 
   return (
     <header className="sticky top-0 z-10 w-auto border-b bg-white/80 backdrop-blur-sm">
-      <div className="flex h-12  items-center justify-between px-4">
+      <div className="flex h-12 items-center justify-between px-4">
         <Link href="/works" className="text-lg font-semibold">
           Oliver Ballon
         </Link>
@@ -21,9 +23,8 @@ export default function Header() {
             <menu>
               <ul className="flex gap-6">
                 {navigation.map((link, index) => (
-                  <li key={index}>
+                  <li key={`${link.label}-${index}`}>
                     <Link
-                      key={link.label}
                       href={link.href}
                       className="font-medium hover:text-gray-600 transition-colors"
                     >
@@ -52,65 +53,63 @@ export default function Header() {
             </div>
           </nav>
 
-          <div>
-            <Button
-              onClick={() => toggleMenu()}
-              aria-label="Open menu"
-              className={`${
-                open ? "hidden" : "block"
-              } md:hidden bg-transparent text-black hover:bg-gray-10 border-gray-300`}
+          <div className="md:hidden">
+            <button
+              type="button"
+              onClick={toggleMenu}
+              aria-label={open ? "Close menu" : "Open menu"}
+              className="rounded border border-gray-300 px-3 py-2 text-sm text-black bg-transparent hover:bg-gray-100"
             >
-              Menu
-            </Button>
+              <span className="flex items-center gap-2">
+                <Menu className="h-4 w-4" />
+                {open ? "Close" : "Menu"}
+              </span>
+            </button>
 
-            <div
-              className={`py-2 flex flex-col gap-2 ${
-                !open
-                  ? "hidden"
-                  : "pl-2 pt-2 fixed inset-0 z-20 bg-white h-screen flex flex-col justify-center items-center gap-5"
-              }`}
-            >
-              <Button
-                onClick={() => toggleMenu()}
-                aria-label="Open menu"
-                className={`${
-                  open ? "block" : "hidden"
-                } md:hidden z-999  bg-transparent top-10 right-5 absolute hover:bg-gray-10 border-gray-300`}
-              >
-                <span className="flex items-center justify-center text-black">
-                  Close
-                  <X />
-                </span>
-              </Button>
-              {navigation.map((link) => (
-                <Link
-                  key={link.label}
-                  href={link.href}
-                  className="block px-4 py-2 text-gray-700 hover:bg-gray-100 rounded transition-colors"
-                  onClick={() => setOpen(false)}
+            {open ? (
+              <div className="pl-2 pt-2 fixed inset-0 z-20 bg-white h-screen flex flex-col justify-center items-center gap-5">
+                <button
+                  type="button"
+                  onClick={closeMenu}
+                  aria-label="Close menu"
+                  className="absolute top-10 right-5 rounded border border-gray-300 px-3 py-2 text-sm text-black bg-transparent hover:bg-gray-100"
                 >
-                  {link.label}
-                </Link>
-              ))}
-              <a
-                href="https://instagram.com/olliesavestheworld"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-2 px-4 py-2 text-gray-700 hover:bg-gray-100 rounded transition-colors"
-                onClick={() => setOpen(false)}
-              >
-                <Instagram className="h-5 w-5" />
-                Instagram
-              </a>
-              <a
-                href="mailto:hello@oliverballon.com"
-                rel="noopener"
-                className="flex items-center gap-2 px-4 py-2 text-gray-700 hover:bg-gray-100 rounded transition-colors"
-                onClick={() => setOpen(false)}
-              >
-                <Mail className="h-5 w-5" /> Email
-              </a>
-            </div>
+                  <span className="flex items-center gap-2">
+                    Close
+                    <X className="h-4 w-4" />
+                  </span>
+                </button>
+
+                {navigation.map((link) => (
+                  <Link
+                    key={link.label}
+                    href={link.href}
+                    onClick={closeMenu}
+                    className="block px-4 py-2 text-gray-700 hover:bg-gray-100 rounded transition-colors"
+                  >
+                    {link.label}
+                  </Link>
+                ))}
+                <a
+                  href="https://instagram.com/olliesavestheworld"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={closeMenu}
+                  className="flex items-center gap-2 px-4 py-2 text-gray-700 hover:bg-gray-100 rounded transition-colors"
+                >
+                  <Instagram className="h-5 w-5" />
+                  Instagram
+                </a>
+                <a
+                  href="mailto:hello@oliverballon.com"
+                  rel="noopener"
+                  onClick={closeMenu}
+                  className="flex items-center gap-2 px-4 py-2 text-gray-700 hover:bg-gray-100 rounded transition-colors"
+                >
+                  <Mail className="h-5 w-5" /> Email
+                </a>
+              </div>
+            ) : null}
           </div>
         </div>
       </div>

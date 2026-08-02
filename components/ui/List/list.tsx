@@ -1,12 +1,13 @@
 import { ArtworkPageProps } from "@/lib/models/ArtworkPageProps";
 import { PrcssPageProps } from "@/lib/models/PrcssPageProps";
+import { memo } from "react";
 import ListRow from "../List-Row/list-row";
 
 type GalleryProps = {
-  sortedWorks: ArtworkPageProps[];
+  sortedWorks: (ArtworkPageProps | PrcssPageProps)[];
 };
 
-export default function List({ sortedWorks }: GalleryProps) {
+const List = memo(function List({ sortedWorks }: GalleryProps) {
   return (
     <div className="container mx-auto px-4">
       <ul className="flex flex-row justify-between items-center w-full p-1 border-b border-gray-200">
@@ -16,9 +17,11 @@ export default function List({ sortedWorks }: GalleryProps) {
         <li className="flex-1 text-md md:text-lg ">Surface</li>
         <li className="flex-1 text-md md:text-lg ">Available</li>
       </ul>
-      {sortedWorks.map((artwork: ArtworkPageProps | PrcssPageProps) => (
+      {sortedWorks.map((artwork) => (
         <ListRow key={artwork.id} row={artwork} />
       ))}
     </div>
   );
-}
+});
+
+export default List;

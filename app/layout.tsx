@@ -1,24 +1,13 @@
-"use client";
-
 import Footer from "@/components/layout/components/Footer";
 import Header from "@/components/layout/components/Header";
 import { Analytics } from "@vercel/analytics/next";
-import { useRef } from "react";
-import "./globals.css";
+import "../styles/globals.css";
+
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  function useFirstRender() {
-    const ref = useRef(true);
-    const firstRender = ref.current;
-    ref.current = false;
-    return firstRender;
-  }
-
-  let displaySplash = useFirstRender();
-
   return (
     <html lang="en">
       <head>

@@ -3,32 +3,31 @@ import { PrcssPageProps } from "@/lib/models/PrcssPageProps";
 
 export const sortBy = (
   value: string,
-  works: ArtworkPageProps[] | PrcssPageProps[]
+  works: ArtworkPageProps[] | PrcssPageProps[],
 ) => {
-  let sorted = [...works];
+  const sorted = [...works];
 
   switch (value) {
     case "new":
-      return sorted.sort((a, b) => b.year - a.year);
+      return sorted.sort((left, right) => right.year - left.year);
     case "old":
-      return sorted.sort((a, b) => a.year - b.year);
+      return sorted.sort((left, right) => left.year - right.year);
     case "available":
       return sorted.filter((work) => work.available);
     default:
-      //If no valid option is selected, return the original array
       return sorted;
   }
 };
 
 export const filterBy = (
-  value: string,
-  works: ArtworkPageProps[]
-): (ArtworkPageProps | null)[] => {
-  let worksToFilter = [...works];
+  filters: string[],
+  works: ArtworkPageProps[],
+): ArtworkPageProps[] => {
+  if (filters.length === 0) {
+    return [...works];
+  }
 
-  let filtered = worksToFilter.map((work: ArtworkPageProps) =>
-    work.tags?.includes(value as Tag) ? work : null
+  return works.filter((work) =>
+    filters.some((filter) => work.tags?.includes(filter as Tag)),
   );
-
-  return filtered.filter((work) => work !== null);
 };
