@@ -2,35 +2,39 @@ import { ArtworkPageProps } from "@/lib/models/ArtworkPageProps";
 import { PrcssPageProps } from "@/lib/models/PrcssPageProps";
 import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
+import { memo, useState } from "react";
+
 type ListRowProps = {
   row: ArtworkPageProps | PrcssPageProps;
 };
 
-export default function ListRow({ row }: ListRowProps) {
-  let preview: boolean = false;
-  let image: ArtworkPageProps | PrcssPageProps = preview ? row : row;
+const isArtwork = (
+  work: ArtworkPageProps | PrcssPageProps,
+): work is ArtworkPageProps => "tags" in work;
 
-  const [previewImage, setViewPreview] = useState<
-    ArtworkPageProps | PrcssPageProps | undefined
-  >(undefined);
-  const [viewPreview, setPreview] = useState<boolean>(false);
+const ListRow = memo(function ListRow({ row }: ListRowProps) {
+  const [previewImage, setPreviewImage] = useState<
+    ArtworkPageProps | PrcssPageProps | null
+  >(null);
+  const [viewPreview, setViewPreview] = useState(false);
 
-  const displayPreview = () => {
-    setViewPreview(image);
-    setPreview(!viewPreview);
+  const handlePreviewChange = (isVisible: boolean) => {
+    setPreviewImage(row);
+    setViewPreview(isVisible);
   };
+
+  const itemRoute = isArtwork(row) ? `/artwork/${row.id}` : `/prcss/${row.id}`;
 
   return (
     <Link
-      href={`/artwork/${row.id}`}
+      href={itemRoute}
       key={row.id}
       className="group self-center justify-self-center w-full"
-      onMouseEnter={displayPreview}
-      onMouseLeave={displayPreview}
+      onMouseEnter={() => handlePreviewChange(true)}
+      onMouseLeave={() => handlePreviewChange(false)}
     >
       <ul className="flex flex-row justify-between items-center w-full p-1 border-b border-gray-200 hover:text-white transition-all duration-700 ease-in-out hover:bg-orange-500">
-        <li className="flex-1">{row.title} </li>
+        <li className="flex-1">{row.title}</li>
         <li className="flex-1">{row.year}</li>
         <li className="flex-1">{row.medium}</li>
         <li className="flex-1">{row.surface}</li>
@@ -44,21 +48,21 @@ export default function ListRow({ row }: ListRowProps) {
           ></div>
         </li>
 
-        {viewPreview ? (
-          <div
-            className={
-              "absolute top-25 right-10 z-10 mr-5 opacity-0 transition-opacity duration-500 ease-in-out"
-            }
-          >
+        {viewPreview && previewImage ? (
+          <div className="absolute top-25 right-10 z-10 mr-5 opacity-100 transition-opacity duration-500 ease-in-out">
             <Image
-              src={previewImage?.src ?? ""}
-              alt={previewImage?.title ?? "Preview Image"}
+              src={previewImage.src}
+              alt={previewImage.title}
               width={200}
               height={200}
+              quality={60}
+              sizes="200px"
             />
           </div>
-        ) : undefined}
+        ) : null}
       </ul>
     </Link>
   );
-}
+});
+
+export default ListRow;

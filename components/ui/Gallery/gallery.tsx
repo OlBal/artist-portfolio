@@ -7,31 +7,41 @@ type GalleryProps = {
   sortedWorks: ArtworkPageProps[] | PrcssPageProps[];
 };
 
+const isArtwork = (
+  work: ArtworkPageProps | PrcssPageProps,
+): work is ArtworkPageProps => "tags" in work;
+
 export default function Gallery({ sortedWorks }: GalleryProps) {
-  const artworkOrPrcss =
-    sortedWorks[0] && "tags" in sortedWorks[0] ? "artwork" : "prcss";
+  const routePrefix =
+    sortedWorks[0] && isArtwork(sortedWorks[0]) ? "artwork" : "prcss";
 
   return (
     <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 xl:grid-cols-6 border-t border-[#ececec]">
-      {sortedWorks.map((artwork: ArtworkPageProps | PrcssPageProps) => (
-        <figure
-          key={artwork.id}
-          className="p-5 m-0 border-r border-b border-[#ececec] box-border flex items-center justify-center"
-        >
-          <Link
-            href={`/${artworkOrPrcss}/${artwork.id}`}
-            className="group self-center justify-self-center"
+      {sortedWorks.map((work) => {
+        const itemRoute = `/${routePrefix}/${work.id}`;
+        const imageWidth = work.width * 15;
+        const imageHeight = work.height * 15;
+
+        return (
+          <figure
+            key={work.id}
+            className="p-5 m-0 border-r border-b border-[#ececec] box-border flex items-center justify-center"
           >
-            <div className="relative overflow-hidden">
-              <LazyImage
-                artwork={artwork}
-                height={artwork.height * 15}
-                width={artwork.width * 15}
-              />
-            </div>
-          </Link>
-        </figure>
-      ))}
+            <Link
+              href={itemRoute}
+              className="group self-center justify-self-center"
+            >
+              <div className="relative overflow-hidden">
+                <LazyImage
+                  artwork={work}
+                  height={imageHeight}
+                  width={imageWidth}
+                />
+              </div>
+            </Link>
+          </figure>
+        );
+      })}
     </div>
   );
 }

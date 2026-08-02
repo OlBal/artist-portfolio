@@ -13,7 +13,7 @@ export default function AboutPage() {
       <main className="container py-4 px-0 sm:px-4 md:px-8 ">
         <div className="relative mb-4">
           <Image
-            src="/about/about-profile-photo.webp"
+            src="/optimized/about/about-profile-photo.webp"
             alt="Oliver Ballon living his life"
             className="object-cover object-center"
             width={400}

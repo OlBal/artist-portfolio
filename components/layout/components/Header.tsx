@@ -1,17 +1,11 @@
-import { Button } from "@/components/ui/button";
 import { navigation } from "@/lib/schemas/navigation";
-import { Instagram, Mail, X } from "lucide-react";
+import { Instagram, Mail, Menu, X } from "lucide-react";
 import Link from "next/link";
-import { useState } from "react";
 
 export default function Header() {
-  const [open, setOpen] = useState(false);
-  const toggleMenu = () => setOpen(() => !open);
-  const closeMenu = () => setOpen(false);
-
   return (
     <header className="sticky top-0 z-10 w-auto border-b bg-white/80 backdrop-blur-sm">
-      <div className="flex h-12  items-center justify-between px-4">
+      <div className="flex h-12 items-center justify-between px-4">
         <Link href="/works" className="text-lg font-semibold">
           Oliver Ballon
         </Link>
@@ -21,9 +15,8 @@ export default function Header() {
             <menu>
               <ul className="flex gap-6">
                 {navigation.map((link, index) => (
-                  <li key={index}>
+                  <li key={`${link.label}-${index}`}>
                     <Link
-                      key={link.label}
                       href={link.href}
                       className="font-medium hover:text-gray-600 transition-colors"
                     >
@@ -52,42 +45,27 @@ export default function Header() {
             </div>
           </nav>
 
-          <div>
-            <Button
-              onClick={() => toggleMenu()}
-              aria-label="Open menu"
-              className={`${
-                open ? "hidden" : "block"
-              } md:hidden bg-transparent text-black hover:bg-gray-10 border-gray-300`}
-            >
-              Menu
-            </Button>
+          <details className="md:hidden">
+            <summary className="list-none cursor-pointer rounded border border-gray-300 px-3 py-2 text-sm text-black bg-transparent hover:bg-gray-100">
+              <span className="flex items-center gap-2">
+                <Menu className="h-4 w-4" />
+                Menu
+              </span>
+            </summary>
 
-            <div
-              className={`py-2 flex flex-col gap-2 ${
-                !open
-                  ? "hidden"
-                  : "pl-2 pt-2 fixed inset-0 z-20 bg-white h-screen flex flex-col justify-center items-center gap-5"
-              }`}
-            >
-              <Button
-                onClick={() => toggleMenu()}
-                aria-label="Open menu"
-                className={`${
-                  open ? "block" : "hidden"
-                } md:hidden z-999  bg-transparent top-10 right-5 absolute hover:bg-gray-10 border-gray-300`}
-              >
-                <span className="flex items-center justify-center text-black">
+            <div className="pl-2 pt-2 fixed inset-0 z-20 bg-white h-screen flex flex-col justify-center items-center gap-5">
+              <summary className="list-none cursor-pointer absolute top-10 right-5 rounded border border-gray-300 px-3 py-2 text-sm text-black bg-transparent hover:bg-gray-100">
+                <span className="flex items-center gap-2">
                   Close
-                  <X />
+                  <X className="h-4 w-4" />
                 </span>
-              </Button>
+              </summary>
+
               {navigation.map((link) => (
                 <Link
                   key={link.label}
                   href={link.href}
                   className="block px-4 py-2 text-gray-700 hover:bg-gray-100 rounded transition-colors"
-                  onClick={() => setOpen(false)}
                 >
                   {link.label}
                 </Link>
@@ -97,7 +75,6 @@ export default function Header() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-2 px-4 py-2 text-gray-700 hover:bg-gray-100 rounded transition-colors"
-                onClick={() => setOpen(false)}
               >
                 <Instagram className="h-5 w-5" />
                 Instagram
@@ -106,12 +83,11 @@ export default function Header() {
                 href="mailto:hello@oliverballon.com"
                 rel="noopener"
                 className="flex items-center gap-2 px-4 py-2 text-gray-700 hover:bg-gray-100 rounded transition-colors"
-                onClick={() => setOpen(false)}
               >
                 <Mail className="h-5 w-5" /> Email
               </a>
             </div>
-          </div>
+          </details>
         </div>
       </div>
     </header>
